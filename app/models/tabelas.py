@@ -22,7 +22,7 @@ class entidade(db.Model):
     tipo_entidade = db.Column(db.Integer)
     id_endereco = db.Column(db.Integer)
     id_usuario = db.Column(db.Integer)
-    rasao_social = db.Column(db.String(25))
+    razao_social = db.Column(db.String(25))
 
 class endereco(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

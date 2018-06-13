@@ -21,3 +21,7 @@ def contato():
 @app.route('/sobre')
 def sobre():
     return render_template('sobre.html')
+
+@app.route('/cadastro')
+def cadastro():
+    return render_template('cadastro.html')
