@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cea4597-10e6-4621-b477-2fe9b247b22a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/heroi-social.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/heroi-social.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/tabelas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/tabelas.py" afterDir="false" />
-    </list>
+    <list default="true" id="1cea4597-10e6-4621-b477-2fe9b247b22a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +20,7 @@
       <file leaf-file-name="tabelas.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/tabelas.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
+            <state relative-caret-position="634">
               <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
             </state>
           </provider>
@@ -34,6 +29,11 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Adailson &lt;adailson.jose.tavares@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -127,11 +127,18 @@
       <option name="presentableId" value="Default" />
       <updated>1528913610838</updated>
     </task>
+    <task id="LOCAL-00001" summary="Methodos initis das classes tabelas usuarios, entidade, endereco.">
+      <created>1528915669879</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528915669879</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="706" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -154,6 +161,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Methodos initis das classes tabelas usuarios, entidade, endereco." />
+    <option name="LAST_COMMIT_MESSAGE" value="Methodos initis das classes tabelas usuarios, entidade, endereco." />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/config.py">
@@ -202,7 +214,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/tabelas.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
+        <state relative-caret-position="634">
           <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
         </state>
       </provider>
