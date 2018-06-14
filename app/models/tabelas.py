@@ -11,6 +11,16 @@ class usuario(db.Model):
         self.email = email
         self.password = password
 
+    @property
+    def is_activate(self):
+        return True
+
+    @property
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return str(self.id)
 
 class entidade(db.Model):
     __tablename__ = "entidade"
