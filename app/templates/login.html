@@ -2,40 +2,36 @@
 {% block title %}{{super()}}-Login{% endblock %}
 {% block content %}
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="../../../../favicon.ico">
-  <title>Signin Template for Bootstrap</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+<h2>Login</h2>
+<form action="" method="POST">
+	{{ form.csrf_token }}
+	<div class="form-group" type="email">
+		<label>E-mail</label>
+		{{ form.mail(class="form-control",
+		placeholder="'example@mail.com'") }}
+		{% if form.errors.mail %}
+		<div> class="alert alert-danger" role="alert"
+			{{ form.errors.mail }}
+		</div>
+		{% endif %}
+	</div>
+	<div class="form-group">
+		<label>Password</label>
+		{{ form.password(class="form-control",
+		placeholder="Senha") }}
+		{% if form.errors.password %}
+		<div> class="alert alert-danger" role="alert"
+			{{ form.errors.password }}
+		</div>
+		{% endif %}
+	</div>
+	<div class="checkbox">
+		<label>
+			{{ form.remember_me}} Salvar Credenciais
+		</label>
+	</div>
+	<button type="submit" class="btn btn-lg btn-primary btn-block">Entrar</button>
+</form>
 
-  <!-- Custom styles for this template -->
-  <link href="signin.css" rel="stylesheet">
-</head>
-
-<body class="text-center">
-  <form class="form-signin">
-    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Entrar</h1>
-    <label for="inputEmail" class="sr-only">email</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
-    <label for="inputPassword" class="sr-only">senha</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required autofocus>
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Salvar credenciais
-      </label>
-      <span class="separator">&middot;</span>
-      <a class="forgot" href="/account/begin_password_reset" rel="noopener">Esqueceu sua senha?</a>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-  </form>
-</body>
-</html>
 {% endblock %}

@@ -18,17 +18,17 @@
 </head>
 
 <body>
-
 <div class="container">
     <div class="header clearfix">
         <nav>
             <ul class="navnav-pills pull-right">
-                <li role="presentation" class="active"><a href="index">Menu</a></li>
                 <li role="presentation" class="active"><a href="sobre">Sobre</a></li>
+                <li role="presentation" class="active"><a href="contato">Contato</a></li>
                 {% if current_user.is_authenticated %}
                 <li role="presentation" class="active"><a href="{{url_for('logout')}}">Sair</a></li>
                 {% else %}
                 <li role="presentation" class="active"><a href="{{url_for('login')}}">Entrar</a></li>
+                <li role="presentation" class="active"><a href="{{url_for('index')}}">Menu</a></li>
                 {% endif %}
             </ul>
         </nav>
@@ -39,7 +39,7 @@
     {% endblock %}
 
     <footer class="footer">
-        <p>&copy; 2018 Company, Inc.</p>
+        <p>&copy; 2018 Herói Social.</p>
     </footer>
 
 </div> <!-- /container -->
