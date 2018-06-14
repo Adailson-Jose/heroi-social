@@ -1,10 +1,9 @@
 from app import db
 
-
 class usuario(db.Model):
     __tablename__= "usuario"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    email = db.Column(db.String(25))
+    email = db.Column(db.String(40))
     password = db.Column(db.String(16))
 
     def __init__(self, email, password):
@@ -12,7 +11,11 @@ class usuario(db.Model):
         self.password = password
 
     @property
-    def is_activate(self):
+    def is_authenticated(self):
+        return True
+
+    @property
+    def is_active(self):
         return True
 
     @property
@@ -32,7 +35,7 @@ class entidade(db.Model):
     tipo_entidade = db.Column(db.Integer)
     id_endereco = db.Column(db.Integer)
     id_usuario = db.Column(db.Integer)
-    razao_social = db.Column(db.String(25))
+    razao_social = db.Column(db.String(50))
 
     def __init__(self, id, cnpj, estado, telefone, tipo_entidade, id_endereco, id_usuario, razao_social):
         self.id = id
@@ -47,10 +50,10 @@ class entidade(db.Model):
 
 class endereco(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    rua = db.Column(db.String(25))
-    bairro = db.Column(db.String(25))
-    cidade = db.Column(db.String(25))
-    estado = db.Column(db.String(25))
+    rua = db.Column(db.String(35))
+    bairro = db.Column(db.String(30))
+    cidade = db.Column(db.String(30))
+    estado = db.Column(db.String(35))
     numero = db.Column(db.Integer)
     cep = db.Column(db.Integer)
 

@@ -13,9 +13,10 @@ migrate = Migrate(app, db) #Cuida das migrações (CRUD)
 manager = Manager(app) # Cuida dos comando que inicia a aplicação
 manager.add_command('db', MigrateCommand)
 
+from app.models import tabelas, forms
+
 lm = LoginManager()
 lm.init_app(app)
-
 from app.models import tabelas
 from app.controllers import default
 
