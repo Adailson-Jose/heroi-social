@@ -6,12 +6,6 @@ from wtforms.fields.html5 import EmailField
 from wtforms.fields.html5 import TelField
 
 
-class LoginForm(FlaskForm):
-    mail = EmailField('email', [validators.DataRequired(), validators.Email()])
-    password = PasswordField("password", validators=[DataRequired()])
-    remember_me = BooleanField("remember_me")
-
-
 class CadastroForm(FlaskForm):
     mail = EmailField('email', [validators.DataRequired(), validators.Email(), validators.length(min=10, max=40)])
     password = PasswordField("password", validators=[DataRequired(), validators.length(min=8, max=25)])
