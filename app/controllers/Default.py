@@ -1,9 +1,11 @@
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, flash, redirect, url_for
 from app import app, db, lm
-from app.models.tabelas import usuario, entidade, endereco
-from app.models.forms import LoginForm, CadastroForm
-from flask_login import login_user, logout_user, login_manager
+from app.models.Tabelas import usuario, entidade
+from app.controllers.LoginForms import LoginForm
+from app.controllers.CadastroForms import CadastroForm
 
+from flask_login import login_user, logout_user
+from app.controllers.InserirObjetos import InserirObjetos
 
 @app.route('/index')
 @app.route('/')
@@ -27,6 +29,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = usuario.query.filter_by(email=form.mail.data).first()
+        print(user.email)
         if user and user.password == form.password.data:
             login_user(user)
             flash('Logado com sucesso.')
@@ -34,19 +37,18 @@ def login():
         flash('Login inválido.')
     return render_template('login.html', form=form)
 
-
 @app.route('/cadastro', methods=["GET", "POST"])
 def cadastro():
     form = CadastroForm()
+    criarUser = InserirObjetos()
     if form.validate_on_submit():
-        user = usuario(form.mail.data, form.password.data)
+        objUser = usuario(form.mail.data, form.password.data)
         objEntidade = entidade(None, form.cnpj.data, None, form.telefone.data, form.tipo_entidade.data, None, None,
                                form.razao_social.data)
-        db.session.add(user)
-        db.session.add(objEntidade)
-        db.session.commit()
-        flash('Cadastrado com sucesso.')
-        return redirect(url_for('index'))
+        if criarUser.inserirUser(objUser, objEntidade):
+            print('Usuario cadastrado com sucesso!')
+            return redirect(url_for('index'))
+        print('Usuario não cadastrado!')
     return render_template('cadastro.html', form=form)
 
 @app.route('/sair')
@@ -75,9 +77,9 @@ def testeCriar(info):
 
 @app.route('/teste/', defaults={'info': None})
 def testeListarar(info):
-    r = usuario.query.filter_by(email='Adailson@gmail').all()
+    r = usuario.query.filter_by(email='Adailson@gmail.com').first()
     print(r)
-    return 'okkk'
+    return
 
 
 """@app.route("/teste/<info>")
