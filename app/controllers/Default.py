@@ -1,30 +1,34 @@
 from flask import render_template, flash, redirect, url_for
 from app import app, db, lm
 from app.controllers.Logar import Logar
-from app.models.GetObjeto import GetObjeto
-from app.models.Tabelas import usuario, entidade
+from app.models.Tabelas import usuario, entidade, endereco
 from app.controllers.LoginForms import LoginForm
 from app.controllers.CadastroForms import CadastroForm
 
-from flask_login import login_user, logout_user
+from flask_login import logout_user
 from app.controllers.InserirObjetos import InserirObjetos
+
 
 @app.route('/index')
 @app.route('/')
 def index():
     return render_template('index.html')
 
+
 @app.route('/base')
 def base():
     return render_template('base.html')
+
 
 @app.route('/principal')
 def principal():
     return render_template('principal.html')
 
+
 @lm.user_loader
 def load_user(id):
-    return usuario.query.filter_by(id=id).first()
+    print(usuario.email)
+    return usuario.query.filter_by(id=usuario.id).first()
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -37,6 +41,7 @@ def login():
             return redirect(url_for('principal'))
         print('Login inválido.')
     return render_template('login.html', form=form)
+
 
 @app.route('/cadastro', methods=["GET", "POST"])
 def cadastro():
@@ -51,6 +56,7 @@ def cadastro():
             return redirect(url_for('index'))
         print('Usuario não cadastrado!')
     return render_template('cadastro.html', form=form)
+
 
 @app.route('/sair')
 def sair():
@@ -75,6 +81,7 @@ def testeCriar(info):
     db.session.add(i)
     db.session.commit()
     return 'OKKKKK'
+
 
 @app.route('/teste/', defaults={'info': None})
 def testeListarar(info):

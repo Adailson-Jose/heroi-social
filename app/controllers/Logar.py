@@ -8,5 +8,5 @@ class Logar():
     def logar(self, objUser):
         if GetObjeto.getUser(self, objUser) == False:
             return False  # login errado
-        login_user(objUser)
+        print(login_user(objUser))
         return True  # usuario já cadastrado
