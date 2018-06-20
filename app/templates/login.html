@@ -2,8 +2,8 @@
 {% block title %}{{super()}}-Login{% endblock %}
 {% block content %}
 
-
-<h2>Login</h2><br>
+<div class="jumbotron">
+	<h2>Login</h2>
 <form action="" method="POST">
 	{{ form.csrf_token }}
 	<div class="form-group" type="email">
@@ -33,5 +33,6 @@
 	</div>
 	<button type="submit" class="btn btn-lg btn-primary btn-block">Entrar</button>
 </form>
+</div>
 
 {% endblock %}

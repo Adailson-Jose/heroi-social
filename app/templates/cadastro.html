@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block title %}{{super()}}-Cadastro{% endblock %}
 {% block content %}
-<h2>Cadastro</h2><br>
+<div class="jumbotron">
+    <h2>Cadastro</h2>
 <form action="" method="POST">
     {{ form.csrf_token }}
     <div class="form-group" type="email">
@@ -91,29 +92,7 @@
         </div>
         {% endif %}
     </div>
-    <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-            Tipo de Entidade
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Seguradora</a>
-            <a class="dropdown-item" href="#">Prefeitura</a>
-            <a class="dropdown-item" href="#">Órgão de Trânsito</a>
-        </div>
-    </div>
-    <br>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-            Dropdown
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button">Action</button>
-            <button class="dropdown-item" type="button">Another action</button>
-            <button class="dropdown-item" type="button">Something else here</button>
-        </div>
-    </div>
     <button type="submit" class="btn btn-lg btn-primary btn-block">Cadastrar</button>
 </form>
+</div>
 {% endblock %}

@@ -16,5 +16,5 @@ manager.add_command('db', MigrateCommand)
 lm = LoginManager()
 lm.init_app(app)
 
-from app.models import Tabelas, DeliteObjeto, GetObjeto, PostObjeto, UpdateObjeto
+from app.models import Tabelas, DeleteObjeto, GetObjeto, PostObjeto, UpdateObjeto
 from app.controllers import Default, InserirObjetos, LoginForms
