@@ -8,6 +8,23 @@ from app.controllers.CadastroForms import CadastroForm
 from flask_login import logout_user
 from app.controllers.InserirObjetos import InserirObjetos
 
+labels = [
+    'JAN', 'FEB', 'MAR', 'APR',
+    'MAY', 'JUN', 'JUL', 'AUG',
+    'SEP', 'OCT', 'NOV', 'DEC'
+]
+
+values = [
+    967.67, 1190.89, 1079.75, 1349.19,
+    2328.91, 2504.28, 2873.83, 4764.87,
+    4349.29, 6458.30, 9907, 16297
+]
+
+colors = [
+    "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA",
+    "#ABCDEF", "#DDDDDD", "#ABCABC", "#4169E1",
+    "#C71585", "#FF4500", "#FEDCBA", "#46BFBD"]
+
 
 @app.route('/index')
 @app.route('/')
@@ -89,6 +106,30 @@ def testeListarar(info):
     print(r)
     return
 
+
+# Rotas para gráficos
+
+@app.route('/pizza')
+def grafico_pizza():
+    pie_labels = labels
+    pie_values = values
+    return render_template('grafico_pizza.html', title='Grafico Pizza', max=17000, set=zip(values, labels, colors))
+
+
+@app.route('/barras')
+def grafico_barra():
+    bar_labels = labels
+    bar_values = values
+    return render_template('grafico_barras.html', title='Grafico de Barras', max=17000, labels=bar_labels,
+                           values=bar_values)
+
+
+@app.route('/linha')
+def line():
+    line_labels = labels
+    line_values = values
+    return render_template('grafico_linha.html', title='Grafico Linha', max=17000, labels=line_labels,
+                           values=line_values)
 
 """@app.route("/teste/<info>")
 @app.route("/teste", defaults={"info": None})
