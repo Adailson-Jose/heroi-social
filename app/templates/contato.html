@@ -1,14 +1,98 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
 {% block title %}{{super()}}-Contato{% endblock %}
 {% block content %}
-
-<body>
 <div class="jumbotron">
-    <h1>Contato...</h1>
-    <p class="lead">E-mail:  projetoanalise2018.1@gmail.com .</p>
-    <p><a class="btn btn-lg btn-success" href="#" role="button">Enviar e-mail</a></p>
+    <h2>Cadastro</h2>
+    <form action="" method="POST">
+        {{ form.csrf_token }}
+        <div class="form-group" type="email">
+            <label>E-mail</label>
+            {{ form.mail(class="form-control",
+            placeholder="'example@mail.com'") }}
+            {% if form.errors.mail %}
+            <div> <!--class="alert alert-danger" role="alert"-->
+                <ul>
+                    {% for e in form.errors.mail %}
+                    <li>{{ e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            {{ form.password(class="form-control",
+            placeholder="Senha") }}
+            {% if form.errors.password %}
+            <div><!-- class="alert alert-danger" role="alert"-->
+                {
+                <ul>
+                    {% for e in form.errors.password %}
+                    <li>{{ e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label>CNPJ</label>
+            {{ form.cnpj(class="form-control",
+            placeholder="'example XXXXXXXXXXXXXX'") }}
+            {% if form.errors.cnpj %}
+            <div> <!--class="alert alert-danger" role="alert"-->
+                <ul>
+                    {% for e in form.errors.cnpj %}
+                    <li>{{ e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label>Telefone</label>
+            {{ form.telefone(class="form-control",
+            placeholder="Example '99 999999999") }}
+            {% if form.errors.telefone %}
+            <div> <!--class="alert alert-danger" role="alert"-->
+                <ul>
+                    {% for e in form.errors.telefone %}
+                    <li>{{ e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label>Entidade</label>
+            {{ form.tipo_entidade(class="form-control",
+            placeholder="'Seguradora = 1, Prefeitura = 2, Órgão de Trânsito = 3'") }}
+            {% if form.errors.tipo_entidade %}
+            <div> <!--class="alert alert-danger" role="alert"-->
+                <ul>
+                    {% for e in form.errors.tipo_entidade %}
+                    <li>{{ e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label>Razão Social</label>
+            {{ form.razao_social(class="form-control",
+            placeholder="Razão Social") }}
+            {% if form.errors.razao_social %}
+            <div> class="alert alert-danger" role="alert"
+                <ul>
+                    {% for e in form.errors.razao_social %}
+                    <li>
+                        {{ e }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Cadastrar</button>
+    </form>
 </div>
-</body>
-</html>
 {% endblock %}

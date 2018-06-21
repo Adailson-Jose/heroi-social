@@ -17,4 +17,4 @@ lm = LoginManager()
 lm.init_app(app)
 
 from app.models import Tabelas, DeleteObjeto, GetObjeto, PostObjeto, UpdateObjeto
-from app.controllers import Default, InserirObjetos, LoginForms
+from app.controllers import Default, InserirObjetos, LoginForms, CadastroForms, ContatoForms

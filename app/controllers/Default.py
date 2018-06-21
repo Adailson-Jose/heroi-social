@@ -4,7 +4,7 @@ from app.controllers.Logar import Logar
 from app.models.Tabelas import usuario, entidade, endereco
 from app.controllers.LoginForms import LoginForm
 from app.controllers.CadastroForms import CadastroForm
-
+from app.controllers.ContatoForms import ContatoForm
 from flask_login import logout_user
 from app.controllers.InserirObjetos import InserirObjetos
 
@@ -82,9 +82,12 @@ def sair():
     return redirect(url_for('index'))
 
 
-@app.route('/contato')
+@app.route('/contato', methods=['GET', 'POST'])
 def contato():
-    return render_template('contato.html')
+    form = ContatoForm()
+    if form.validate_on_submit():
+        return redirect(url_for('index'))
+    return render_template('contato.html', form=form)
 
 
 @app.route('/sobre')
