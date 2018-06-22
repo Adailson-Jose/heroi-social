@@ -16,7 +16,8 @@ manager.add_command('db', MigrateCommand)
 lm = LoginManager()
 lm.init_app(app)
 
-from app.models import Tabelas, DeleteObjeto, GetObjeto, PostObjeto, UpdateObjeto
-from app.controllers import InserirObjetos, LoginForms, CadastroForms, ContatoForms
+from app.models import Tabelas, EnumTipoEntidade
+from app.persistence import UserDao
+from app.controllers import UserControllers, LoginForms, CadastroForms, ContatoForms
 from app.api import Login, Cadastro, Sair, Principal, Sobre, Base, Contato, Index, LouderUser, GraficoBarras, \
     GraficoLinha, GraficoPizza
