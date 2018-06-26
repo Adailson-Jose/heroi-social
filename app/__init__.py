@@ -20,6 +20,6 @@ from app.models import UsuarioObjeto, EnumTipoEntidade, EntidadeObjeto, Acidente
     CoordenadasObjeto, EnderecoObjeto, EnvolvidoObjeto, EquipamentoFiscalizacaoObjeto, InfracaoObjeto, PacoteInformacaObjeto, \
     SemaforoObjeto, SugestaoObjeto, RegistroInfracaoObjeto
 from app.persistence import UserDao
-from app.controllers import UserControllers, LoginForms, CadastroForms, ContatoForms
+from app.controllers import UserControllers, LoginForms, CadastroForms, ContatoForms, ControleCSV
 from app.api import Login, Cadastro, Sair, Principal, Sobre, Base, Contato, Index, LouderUser, GraficoBarras,\
     GraficoLinha, GraficoPizza, MapaAcidentes

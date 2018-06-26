@@ -2,25 +2,60 @@
 {% extends 'base.html' %}
 {% block title %}{{super()}}-Mapa{% endblock %}
 {% block content %}
-<html>
+<html lang="pt-br">
 <head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
+
+    var teste = {{coordenadas}};
+    var ruasLimpas =[];
+
+    var ruasSujas = [
+                  {% for item in ruas %}
+                    "{{ item }}",
+                  {% endfor %}
+                   ];
+
+
+    for(var i = 0; i < ruasSujas.length; i++){
+                rua = ruasSujas[i].replace('(', '');
+                rua = rua.replace(')', '');
+                rua = rua.replace("&#39;", '');
+                rua = rua.replace("&#39;", '');
+
+                console.log(rua);
+
+                ruasLimpas.push(rua)
+    };
+    console.log(ruasLimpas);
+
+    var dados = [
+          ["Lat","Long", "Name"]
+        ];
+
+    for(var i = 0; i < teste.length; i++){
+                teste[i].push(ruasLimpas[i]);
+                dados.push(teste[i]);
+
+    };
+
+    console.log(dados);
+
       google.charts.load("current", {
         "packages":["map"],
         // Note: you will need to get a mapsApiKey for your project.
         // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
         "mapsApiKey": "AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY"
     });
+
       google.charts.setOnLoadCallback(drawChart);
+
       function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Lat', 'Long', 'Name'],
-          [37.4232, -122.0853, 'Work'],
-          [37.4289, -122.1697, 'University'],
-          [37.6153, -122.3900, 'Airport'],
-          [37.4422, -122.1731, 'Shopping']
-        ]);
+        var data = google.visualization.arrayToDataTable(dados);
+        //var data = google.visualization.arrayToDataTable({{set}});
 
         var map = new google.visualization.Map(document.getElementById('map_div'));
         map.draw(data, {
@@ -28,6 +63,8 @@
           showInfoWindow: true
         });
       }
+
+
 
 
     </script>

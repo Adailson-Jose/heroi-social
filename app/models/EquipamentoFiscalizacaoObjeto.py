@@ -3,15 +3,18 @@ from app import db
 class equipamento_fiscalizacao(db.Model):
     __tablename__ = "equipamento_fiscalizacao"
 
-    cod_equipamento = db.Column(db.Integer, primary_key=True)
-    id_endereco = db.Column(db.Integer)
-    velociade = db.Column(db.Integer)
-    equipamento = ''
-    fluxo_veiculo = ''
+    cod_equipamento = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    localizacao = db.Column(db.String(100))
+    tipo = db.Column(db.String(100))
+    latitude = db.Column(db.String(12))
+    longitude = db.Column(db.String(12))
+    velocidade_regulamentada = db.Column(db.String(5))
 
-    def __init__(self, cod_equipamento, id_endereco, velociade, equipamento, fluxo_veiculo):
+
+    def __init__(self, cod_equipamento, localizacao, tipo, latitude, longitude, velocidade_regulamentada):
         self.cod_equipamento = cod_equipamento
-        self.id_endereco = id_endereco
-        self.velociade = velociade
-        self.equipamento = equipamento
-        self.fluxo_veiculo = fluxo_veiculo
+        self.localizacao = localizacao
+        self.tipo = tipo
+        self.latitude = latitude
+        self.longitude = longitude
+        self.velocidade_regulamentada = velocidade_regulamentada
