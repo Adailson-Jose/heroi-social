@@ -22,4 +22,4 @@ from app.models import UsuarioObjeto, EnumTipoEntidade, EntidadeObjeto, Acidente
 from app.persistence import UserDao
 from app.controllers import UserControllers, LoginForms, CadastroForms, ContatoForms
 from app.api import Login, Cadastro, Sair, Principal, Sobre, Base, Contato, Index, LouderUser, GraficoBarras,\
-    GraficoLinha, GraficoPizza
+    GraficoLinha, GraficoPizza, MapaAcidentes
