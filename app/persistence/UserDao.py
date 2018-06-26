@@ -1,4 +1,4 @@
-from app.models.Tabelas import usuario
+from app.models.UsuarioObjeto import usuario
 from app import db
 
 

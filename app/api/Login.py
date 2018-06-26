@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for
 from app import app
-from app.controllers.UserControllers import valida_user, inserirUser
-from app.models.Tabelas import usuario
+from app.controllers.UserControllers import valida_user
+from app.models.UsuarioObjeto import usuario
 from app.controllers.LoginForms import LoginForm
 
 

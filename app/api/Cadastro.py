@@ -1,6 +1,7 @@
 from flask import render_template, redirect, url_for
 from app import app
-from app.models.Tabelas import usuario, entidade
+from app.models.UsuarioObjeto import usuario
+from app.models.EntidadeObjeto import entidade
 from app.controllers.CadastroForms import CadastroForm
 from app.controllers.UserControllers import valida_user, inserirUser
 
