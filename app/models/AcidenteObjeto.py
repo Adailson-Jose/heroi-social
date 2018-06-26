@@ -17,6 +17,7 @@ class acidente(db.Model):
     qtd_vitmas = db.Column(db.Integer)
     qtd_vitmas_fatais = db.Column(db.Integer)
 
+
     def __init__(self, cod, cod_envolvido, id_endereco, tipo, situacao, data, hora, natureza, descricao, qtd_vitmas,
                  qtd_vitmas_fatais):
         self.cod = cod

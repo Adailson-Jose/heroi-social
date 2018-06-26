@@ -3,7 +3,7 @@ from app import db
 class usuario(db.Model):
     __tablename__ = "usuario"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    email = db.Column(db.String(40))
+    email = db.Column(db.String(40), unique=True)
     password = db.Column(db.String(16))
 
     def __init__(self, email, password):
