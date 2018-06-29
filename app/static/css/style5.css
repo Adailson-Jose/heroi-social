@@ -72,7 +72,7 @@ a, a:hover, a:focus {
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
+    padding: 10px;
     background: #6d7fcc;
 }
 
@@ -190,7 +190,7 @@ a.article, a.article:hover {
 
 
 /* ---------------------------------------------------
-    MEDIAQUERIES
+    MEDIA QUERIES (sidebar on the smaller screens)
 ----------------------------------------------------- */
 @media (max-width: 768px) {
     #sidebar {

@@ -29,5 +29,5 @@ for i in csv:
         obj = equipamento_fiscalizacao(None,end,tipo, latitude, longitude, velocidade)
         print(postEquipamento(obj))
 '''
-def getEqupamentos():
-    return equipamento_fiscalizacao.query.filter_by().all()
+'''def getEqupamentos():
+    return equipamento_fiscalizacao.query.filter_by().all()'''

@@ -28,7 +28,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
-
+    <script type="text/javascript" src="js/sidebar.js"></script>
 <!-- Sidebar head -->
 </head>
 
@@ -52,19 +52,17 @@
                             <a href="#">Semáforos e Acidentes</a>
                         </li>
                         <li>
-                            <a href="#">Equip de Fiscalização e Infrações</a>
+                            <a href="#">Equipamentos de Fiscalização e Infrações</a>
                         </li>
                         <li>
-                            <a href="#">Equip de Fiscalização e Acidentes</a>
+                            <a href="#">Equipamentos de Fiscalização e Acidentes</a>
                         </li>
                         <li>
                             <a href="#">Fiscalização, Infrações e Acidentes</a>
                         </li>
                     </ul>
                 </li>
-
-
-                <li class="active">
+                <li>
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Gráficos</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
@@ -75,21 +73,7 @@
                         </li>
                         <li>
                             <a href="{{url_for('grafico_pizza') }}">Grafico em Pizza</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                <!--    <a href="#">About</a>-->
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Mapa de Calor</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="{{url_for('mapa_acidente') }}">Mapa de Calor</a>
-                        </li>
-                        <li>
-                            <a href="{{url_for('mapa_acidente') }}">Mapa de Calor</a>
-                        </li>
-                        <li>
-                            <a href="{{url_for('mapa_acidente') }}">Mapa de Calor</a>
+
                         </li>
                     </ul>
                 </li>
@@ -103,19 +87,19 @@
                             <a href="#">Semáforos</a>
                         </li>
                         <li>
-                            <a href="#">Câmaras de Trânsito</a>
+                            <a href="#">Câmeras de Trânsito</a>
                         </li>
                         <li>
                             <a href="#">Infrações</a>
+                        </li>
+                        <li>
+                            <a href="#">Outros Equipamentos</a>
                         </li>
                     </ul>
                 </li>
 
                <!-- <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a href="#">Outra Opção</a>
                 </li>-->
             </ul>
 
@@ -134,7 +118,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light pull-right">
     <div class="container-fluid">
-
+        <!-- Botão da SideBar -->
         <button type="button" id="sidebarCollapse" class="navbar-btn">
             <span></span>
             <span></span>
@@ -144,38 +128,35 @@
             <i class="fas fa-align-justify"></i>
         </button>
     </div>
-    <a class="navbar-brand" href="sobre">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="sobre">Sobre</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="contato">Contato</a>
             </li>
             {% if current_user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link" href="{{url_for('sair') }}">Sair</a>
-
             </li>
             {% else %}
             <li class="nav-item">
+                <a class="nav-link" href="{{url_for('cadastro')}}">Cadastro</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{url_for('login')}}">Entrar</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url_for('index')}}">Menu</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url_for('cadastro')}}">Cadastrar</a>
             </li>
             {% endif %}
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <!--<form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </form>-->
     </div>
 </nav>
 

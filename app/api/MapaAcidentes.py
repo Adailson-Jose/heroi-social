@@ -1,11 +1,11 @@
 from flask import render_template
 from app import app
-from app.controllers.ControleCSV import getEqupamentos
+'''from app.controllers.ControleCSV import getEqupamentos'''
 
 coordenadas =[]
 ruas =[]
 
-listaEquipamentos  = getEqupamentos()
+'''listaEquipamentos  = getEqupamentos()
 
 for i in listaEquipamentos:
     localizacao= i.localizacao
@@ -14,7 +14,7 @@ for i in listaEquipamentos:
     longitude = float(i.longitude)
     lista = [latitude, longitude]
     coordenadas.append(lista)
-    print(lista)
+    print(lista)'''
 #print(coordenadas)
 
 @app.route('/mapa-equipamentos')
