@@ -25,6 +25,7 @@ for i in csv:
         latitude = i[2]
         longitude =i[3]
         velocidade = i[4]
+        
         obj = equipamento_fiscalizacao(None,end,tipo, latitude, longitude, velocidade)
         print(postEquipamento(obj))
 '''
