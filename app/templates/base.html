@@ -37,7 +37,7 @@
         <!-- Sidebar Holder -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Herói Social</h3>
+                <center><h2>Herói Social</h2></center>
             </div>
 
             <ul class="list-unstyled components">
@@ -73,7 +73,6 @@
                         </li>
                         <li>
                             <a href="{{url_for('grafico_pizza') }}">Grafico em Pizza</a>
-
                         </li>
                     </ul>
                 </li>
@@ -114,9 +113,9 @@
         </nav>
 
         <!-- Sidebar Holder -->
-<div id="content">
+    <div id="content">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light pull-right">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light pull-right">
     <div class="container-fluid">
         <!-- Botão da SideBar -->
         <button type="button" id="sidebarCollapse" class="navbar-btn">
@@ -153,23 +152,23 @@
             </li>
             {% endif %}
         </ul>
-        <!--<form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>-->
     </div>
-</nav>
+    </nav>
 
-{% block content %}
-{% endblock %}
+    {% block content %}
+    {% endblock %}
 
-<footer class="footer">
-    <br><br><br>
-    <center><p>&copy; 2018 Herói Social.</p></center>
-</footer>
+    <footer class="footer">
+        <br><br><br>
+        <center><p>&copy; 2018 Herói Social.</p></center>
+    </footer>
 
-</div>
-</div> <!-- /container -->
+    <!--<div class="footer">
+        <center><p>&copy; 2018 Herói Social.</p></center>
+    </div>-->
+
+    </div>
+    </div> <!-- /container -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!--
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

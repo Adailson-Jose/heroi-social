@@ -6,8 +6,10 @@
 <div class="jumbotron">
     <h1>Bem-Vindo ao Herói Social!</h1>
     <p class="lead">Falta pôr mais informações!</p>
-    <p><a class="btn btn-lg btn-success" href="login" role="button">Logar</a></p>
+    {% if current_user.is_authenticated == false %}
+    <p><a class="btn btn-lg btn-success" href="login" role="button">Entrar</a></p>
     <p><a class="btn btn-lg btn-success" href="cadastro" role="button">Cadastre-se</a></p>
+    {% endif %}
 
 </div>
 

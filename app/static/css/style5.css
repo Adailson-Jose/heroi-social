@@ -45,13 +45,23 @@ a, a:hover, a:focus {
     margin: 40px 0;
 }
 
+/* As tags body e html vão ter como limite o final da janela do navegador.
+html, body {height:100%;}*/
+
+footer {
+    bottom:0px;
+    padding-bottom: 0px;
+}
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
 
+/*Para a DIV geral da página, contendo tudo */
 .wrapper {
     display: flex;
     width: 100%;
+    height:100%;
     align-items: stretch;
     perspective: 1500px;
 }
@@ -72,7 +82,7 @@ a, a:hover, a:focus {
 }
 
 #sidebar .sidebar-header {
-    padding: 10px;
+    padding: 20px;
     background: #6d7fcc;
 }
 

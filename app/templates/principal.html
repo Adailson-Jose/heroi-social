@@ -7,8 +7,16 @@
     <meta charset="UTF-8">
     <div class="jumbotron">
         <h1>Logado com sucesso!</h1>
-        <p>...</p>
-        <p><a class="btn btn-primary btn-lg" href="sair" role="button">Voltar para Menu</a></p>
+        <!--<p><a class="btn btn-primary btn-lg" href="sair" role="button">Voltar para Menu</a></p>-->
+    </div>
+    <div id="messages">
+        {% if current_user.is_authenticated %}
+            {% with msg = get_flashed_messages(with_categories=false) %}
+             {%- for i in msg %}
+            <li>{{ i }}</li>
+            {% endfor -%}
+            {% endwith %}
+        {% endif %}
     </div>
 </head>
 <body>

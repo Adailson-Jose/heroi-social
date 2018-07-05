@@ -4,6 +4,13 @@
 
 <div class="jumbotron">
     <h2>Login</h2>
+    {% if current_user.is_authenticated == false %}
+        {% with msg = get_flashed_messages(with_categories=false) %}
+             {%- for i in msg %}
+            <li>{{ i }}</li>
+            {% endfor -%}
+        {% endwith %}
+    {% endif %}
     <form action="" method="POST">
         {{ form.csrf_token }}
         <div class="form-group" type="email">

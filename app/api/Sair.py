@@ -6,5 +6,5 @@ from flask_login import logout_user
 @app.route('/sair')
 def sair():
     logout_user()
-    flash('Saindo da aplicação.')
+    print('Saindo da aplicação.')
     return redirect(url_for('index'))
