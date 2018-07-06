@@ -1,5 +1,5 @@
 from app import db
-from app.models.EnderecoObjeto import endereco
+from app.models.EnderecoObjetoEntidade import enderecoEntidade
 from app.models.UsuarioObjeto import usuario
 
 class entidade(db.Model):
@@ -11,13 +11,9 @@ class entidade(db.Model):
     telefone = db.Column(db.Integer)
     tipo_entidade = db.Column(db.Integer)
     razao_social = db.Column(db.String(50))
-    '''
-    id_endereco = db.Column(db.Integer, db.ForeignKey('endereco.id'))
+
     id_usuario = db.Column(db.Integer, db.ForeignKey('usuario.id'))
-    
-    endereco = db.relationship('endereco', foreign_keys = 'id_endereco')
-    usuario = db.relationship('usuario', foreign_keys = 'id_usuario')
-    '''
+    id_endereco = db.Column(db.Integer, db.ForeignKey('enderecoEntidade.id'))
 
     def __init__(self, id, cnpj, estado, telefone, tipo_entidade, id_endereco, id_usuario, razao_social):
         self.id = id

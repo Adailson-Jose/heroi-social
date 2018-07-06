@@ -16,10 +16,13 @@ manager.add_command('db', MigrateCommand)
 lm = LoginManager()
 lm.init_app(app)
 
-from app.models import UsuarioObjeto, EnumTipoEntidade, EntidadeObjeto, AcidenteObjeto, AssinaturaObjeto, CameraTransitoObjeto, \
-    CoordenadasObjeto, EnderecoObjeto, EnvolvidoObjeto, EquipamentoFiscalizacaoObjeto, InfracaoObjeto, PacoteInformacaObjeto, \
-    SemaforoObjeto, SugestaoObjeto, RegistroInfracaoObjeto
+from app.models import UsuarioObjeto, EnumTipoEntidade, EntidadeObjeto, AcidenteObjeto, AssinaturaObjeto, \
+    EnderecoObjetoEntidade, EquipamentoFiscalizacaoObjeto, InfracaoObjeto, PacoteInformacaObjeto, \
+    SemaforoObjeto, SugestaoObjeto, RegistroInfracaoObjeto, EnderecoObjeto
 from app.persistence import UserDao
 from app.controllers import UserControllers, LoginForms, CadastroForms, ContatoForms, ControleCSV
-from app.api import Login, Cadastro, Sair, Sobre, Base, Contato, TelaPrincipal, LouderUser, MapaAcidentes,\
-    GraficosAcidentes, GraficosInfracoes
+from app.api import Login, Cadastro, Sair, Sobre, Base, Contato, TelaPrincipal, LouderUser, MapaAcidentes \
+    , GraficosAcidentes, GraficosInfracoes
+
+# cria as tabelas no banco (caso nao existam)
+# db.create_all()
