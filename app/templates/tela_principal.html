@@ -3,6 +3,19 @@
 {% block title %}{{super()}}-Index{% endblock %}
 {% block content %}
 <body>
+<!--{% if current_user.is_authenticated %}
+    {% with msg = get_flashed_messages(with_categories=false) %}
+        {%- for i in msg %}
+            {% if i == "Welcome" %}
+                <div class="alert alert-success alert-dismissible fade show" id="success-alert">
+                    <p><b>Usuário logado com sucesso!</b></p>
+                    <button class="close" data-dismiss="alert">&times;</button>
+                </div>
+            {% endif %}
+        {% endfor -%}
+    {% endwith %}
+{% endif %}-->
+
 <div class="jumbotron">
     <h1>Bem-Vindo ao Herói Social!</h1>
     <p class="lead">Falta pôr mais informações!</p>

@@ -13,7 +13,7 @@ def login():
         if valida_user(objUser):
             print('Logado com sucesso.')
             flash('Welcome', 'ok')
-            return redirect(url_for('principal'))
+            return redirect(url_for('index'))
         print('Login inválido.')
         flash('E-mail ou senha errada.', 'erro')
     return render_template('login.html', form=form)

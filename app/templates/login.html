@@ -4,13 +4,20 @@
 
 <div class="jumbotron">
     <h2>Login</h2>
+    <!-- Após tentativa falha de login, vai aparecer um campo de alerta na tela -->
     {% if current_user.is_authenticated == false %}
         {% with msg = get_flashed_messages(with_categories=false) %}
              {%- for i in msg %}
-            <li>{{ i }}</li>
+                {% if i == "E-mail ou senha errada." %}
+                    <div class="alert alert-danger alert-dismissible fade show" id="danger-alert">
+                        <p>E-mail ou senha inválidos.</p>
+                        <button class="close" data-dismiss="alert">&times;</button>
+                    </div>
+                {% endif %}
             {% endfor -%}
         {% endwith %}
     {% endif %}
+
     <form action="" method="POST">
         {{ form.csrf_token }}
         <div class="form-group" type="email">
