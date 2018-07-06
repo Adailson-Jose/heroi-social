@@ -18,9 +18,9 @@ colors = [
     "#ABCDEF", "#DDDDDD", "#ABCABC", "#4169E1",
     "#C71585", "#FF4500", "#FEDCBA", "#46BFBD"]
 
-
-@app.route('/pizza')
-def grafico_pizza():
-    pie_labels = labels
-    pie_values = values
-    return render_template('grafico_pizza.html', title='Grafico Pizza', max=17000, set=zip(values, labels, colors))
+@app.route('/infracoesgraficos')
+def graficos_infracoes():
+    bar_labels = labels
+    bar_values = values
+    return render_template('graficos_infracoes', title='Grafico de Infracoes', max=17000, labels=bar_labels,
+                           values=bar_values, set=zip(values, labels, colors))

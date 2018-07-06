@@ -53,6 +53,25 @@ footer {
     padding-bottom: 0px;
 }
 
+.graficos1e2 {
+    display: flex;
+    width: 100%;
+    padding: 80px;
+}
+
+.containerSearch {
+  width: 50%; /* define a largura do campo */
+  position: relative;  /* cria o contexto de posicionamento do botão */
+}
+label {display:block;}
+input {width: 100%;} /* define a largura do campo igual a largura do container */
+input,  button {padding: 10px;}
+button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
