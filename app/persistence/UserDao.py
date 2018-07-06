@@ -1,12 +1,18 @@
 from app.models.UsuarioObjeto import usuario
 from app import db
 
-
-def getUser(user):
+def getUserDao(user):
     user = usuario.query.filter_by(email=user.email).first()
     if user == None:
         return False  # não tem esse user no banco
-    return True
+    return user
+
+
+def getIdMaxDao(user):
+    user = usuario.query.count()
+    if user == None:
+        return False  # não tem esse user no banco
+    return user
 
 
 def postUser(user, entidade):

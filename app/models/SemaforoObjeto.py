@@ -3,17 +3,20 @@ from app import db
 class semaforo(db.Model):
     __tablename__ = "semaforo"
 
-    cod_semaforo = db.Column(db.Integer, primary_key=True)
-    id_endereco = db.Column(db.Integer)
-    funcionamento = db.Column(db.String(10))
-    utilizacao = db.Column(db.String(20))
-    sinalsonoro = db.Column(db.String(1))
-    sinalizadorciclista = db.Column(db.String(1))
+    codsemaforo = db.Column(db.Integer, primary_key=True)
+    semaforo = db.Column(db.String(45))
+    funcionamento = db.Column(db.String(45))
+    sinalsonoro = db.Column(db.String(45))
+    sinalizadorciclista = db.Column(db.String(145))
+    utilizacao = db.Column(db.String(45))
+    endereco_codlocal = db.Column(db.Integer, db.ForeignKey('endereco.codlocal'))
 
-    def __init__(self, cod_semaforo, id_endereco, funcionamento, utilizacao, sinalsonoro, sinalizadorciclista):
-        self.cod_semaforo = cod_semaforo
-        self.id_endereco = id_endereco
+    def __init__(self, codsemaforo, semaforo, funcionamento,
+                 sinalsonoro, sinalizadorciclista, utilizacao, endereco_codlocal):
+        self.codsemaforo = codsemaforo
+        self.semaforo = semaforo
         self.funcionamento = funcionamento
-        self.utilizacao = utilizacao
         self.sinalsonoro = sinalsonoro
         self.sinalizadorciclista = sinalizadorciclista
+        self.utilizacao = utilizacao
+        self.endereco_codlocal = endereco_codlocal

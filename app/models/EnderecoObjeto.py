@@ -1,19 +1,28 @@
 from app import db
 
 class endereco(db.Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    rua = db.Column(db.String(35))
-    bairro = db.Column(db.String(30))
-    cidade = db.Column(db.String(30))
-    estado = db.Column(db.String(35))
-    numero = db.Column(db.Integer)
-    cep = db.Column(db.Integer)
+    __tablename__ = "endereco"
 
-    def __init__(self, id, rua, bairro, cidade, estado, numero, cep):
-        self.id = id
-        self.rua = rua
+    codlocal = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    local1 = db.Column(db.String(100))
+    local2 = db.Column(db.String(100))
+    bairro = db.Column(db.String(20))
+    complemento = db.Column(db.String(100))
+    numero = db.Column(db.String(10))
+    latitude = db.Column(db.String(30))
+    longitude = db.Column(db.String(30))
+
+    acidente = db.relationship('acidente', backref='endereco', lazy='dynamic')
+    equipamento_fiscalizacao = db.relationship('equipamento_fiscalizacao', backref='endereco', lazy='dynamic')
+    registro_infracao = db.relationship('registro_infracao', backref='endereco', lazy='dynamic')
+    semaforo = db.relationship('semaforo', backref='endereco', lazy='dynamic')
+
+    def __init__(self, codlocal, local1, local2, bairro, complemento, numero, latitude, longitude):
+        self.codlocal = codlocal
+        self.local1 = local1
+        self.local2 = local2
         self.bairro = bairro
-        self.cidade = cidade
-        self.estado = estado
+        self.complemento = complemento
         self.numero = numero
-        self.cep = cep
+        self.latitude = latitude
+        self.longitude = longitude
