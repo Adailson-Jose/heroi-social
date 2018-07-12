@@ -4,13 +4,14 @@ from app.persistence.SemafaroDao import postSemafaro
 
 
 def lerTxt(nome_ficheiro):
-    ficheiro = open(nome_ficheiro, 'r')
+    ficheiro = open(nome_ficheiro, encoding="utf8")
+    # ficheiro = open(nome_ficheiro,  "r")
     lista = ficheiro.readlines()
     ficheiro.close()
     return lista
 
 
-def inseriAcidentes(nomeDoTxt='semaforos.txt'):
+def inserirSemaforos(nomeDoTxt='semaforos.txt'):
     lista = lerTxt(nomeDoTxt)
     cont = 0
     for i in lista:
@@ -33,6 +34,7 @@ def inseriAcidentes(nomeDoTxt='semaforos.txt'):
                                            utilizacao, i.codlocal)
                     postSemafaro(objSemaforo)
                     cont += 1
+        # print(cont)
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
-# print(inseriAcidentes())
+#print(inserirSemaforos())

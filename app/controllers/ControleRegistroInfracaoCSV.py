@@ -4,7 +4,8 @@ from app.persistence.RegistroInfracaoDao import postRegistroInfracao
 
 
 def lerTxt(nome_ficheiro):
-    ficheiro = open(nome_ficheiro, 'r')
+    ficheiro = open(nome_ficheiro, encoding="utf8")
+    # ficheiro = open(nome_ficheiro,  "r")
     lista = ficheiro.readlines()
     ficheiro.close()
     return lista
