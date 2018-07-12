@@ -6,7 +6,7 @@ class equipamento_fiscalizacao(db.Model):
     codequip = db.Column(db.Integer, primary_key=True, autoincrement=True)
     equipamento = db.Column(db.String(100))
     velocidade_regulamentada = db.Column(db.String(5))
-    contrato = db.Column(db.String(5))
+    contrato = db.Column(db.String(25))
     nome = db.Column(db.String(5))
     fluxo_veiculo = db.Column(db.Integer)
     endereco_codlocal = db.Column(db.Integer, db.ForeignKey('endereco.codlocal'))

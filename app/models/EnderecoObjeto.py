@@ -6,9 +6,9 @@ class endereco(db.Model):
     codlocal = db.Column(db.Integer, primary_key=True, autoincrement=True)
     local1 = db.Column(db.String(100))
     local2 = db.Column(db.String(100))
-    bairro = db.Column(db.String(20))
     complemento = db.Column(db.String(100))
     numero = db.Column(db.String(10))
+    bairro = db.Column(db.String(20))
     latitude = db.Column(db.String(30))
     longitude = db.Column(db.String(30))
 
@@ -17,12 +17,12 @@ class endereco(db.Model):
     registro_infracao = db.relationship('registro_infracao', backref='endereco', lazy='dynamic')
     semaforo = db.relationship('semaforo', backref='endereco', lazy='dynamic')
 
-    def __init__(self, codlocal, local1, local2, bairro, complemento, numero, latitude, longitude):
+    def __init__(self, codlocal, local1, local2, complemento, numero, bairro, latitude, longitude):
         self.codlocal = codlocal
         self.local1 = local1
         self.local2 = local2
-        self.bairro = bairro
         self.complemento = complemento
         self.numero = numero
+        self.bairro = bairro
         self.latitude = latitude
         self.longitude = longitude

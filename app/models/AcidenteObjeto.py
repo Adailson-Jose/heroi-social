@@ -4,11 +4,11 @@ class acidente(db.Model):
     __tablename__ = "acidente"
 
     codacidente = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    data_abertura = db.Column(db.String(45))
-    hora_abertura = db.Column(db.String(45))
+    data_abertura = db.Column(db.String(20))
+    hora_abertura = db.Column(db.String(20))
     tipo_ocorrencia = db.Column(db.String(45))
-    quantidade_vitimas = db.Column(db.String(45))
-    descricao = db.Column(db.String(45))
+    quantidade_vitimas = db.Column(db.String(5))
+    descricao = db.Column(db.String(200))
     endereco_codlocal = db.Column(db.Integer, db.ForeignKey('endereco.codlocal'))
     tipo = db.Column(db.String(45))
 

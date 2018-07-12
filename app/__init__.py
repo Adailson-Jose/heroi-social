@@ -22,8 +22,7 @@ from app.models import UsuarioObjeto, EnumTipoEntidade, EntidadeObjeto, Acidente
 
 from app.persistence import UserDao, EquipamentoDao, EnderecoDao, EnderecoEntidadeDao, AcidenteDao, RegistroInfracaoDao
 
-from app.controllers import UserControllers, LoginForms, CadastroForms, ContatoForms, \
-    ControleEquipamentosCSV, ControleAcidentesCSV, ControleRegistroInfracaoCSV
+from app.controllers import UserControllers, LoginForms, CadastroForms, ContatoForms
 
 from app.api import Login, Cadastro, Sair, Sobre, Base, Contato, TelaPrincipal, LouderUser, MapaAcidentes \
     , GraficosAcidentes, GraficosInfracoes
