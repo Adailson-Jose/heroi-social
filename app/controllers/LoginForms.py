@@ -9,4 +9,3 @@ from wtforms.fields.html5 import TelField
 class LoginForm(FlaskForm):
     mail = EmailField('email', [validators.DataRequired(), validators.Email()])
     password = PasswordField("password", validators=[DataRequired()])
-    remember_me = BooleanField("remember_me")
