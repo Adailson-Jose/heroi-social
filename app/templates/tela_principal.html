@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
-{% block title %}{{super()}}-Index{% endblock %}
+{% block title %}{{super()}}-Principal{% endblock %}
 {% block content %}
 <body>
 <!--{% if current_user.is_authenticated %}
@@ -17,11 +17,13 @@
 {% endif %}-->
 
 <div class="jumbotron">
-    <h1>Bem-Vindo ao Herói Social!</h1>
-    <p class="lead">Falta pôr mais informações!</p>
-    {% if current_user.is_authenticated == false %}
-    <p><a class="btn btn-lg btn-success" href="login" role="button">Entrar</a></p>
-    <p><a class="btn btn-lg btn-success" href="cadastro" role="button">Cadastre-se</a></p>
+    {% if current_user.is_authenticated  %}
+        <h1>Bem-Vindo ao Herói Social! </h1>
+    {% else%}
+    <h1>Cadastre-se já! </h1>
+
+        <h4>Cadastrando-se hoje, você ganhará acesso ilimitado por apenas R$ 0,50 durante uma hora!</h4>
+
     {% endif %}
 
 </div>

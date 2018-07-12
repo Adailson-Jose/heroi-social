@@ -17,6 +17,7 @@ def getIdMaxDao(user):
 
 def postUser(user, entidade):
     db.session.add(user)
+    db.session.commit()
     db.session.add(entidade)
     if db.session.commit() == None:
         return True  # user foi inserido no banco

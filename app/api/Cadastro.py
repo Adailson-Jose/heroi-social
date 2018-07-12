@@ -27,7 +27,7 @@ def cadastro():
             inserirEnderecoEntidade(objEnderecoEntidade)
             inserirUser(objUser, objEntidade)
             print('Usuario cadastrado com sucesso!')
-            return redirect(url_for('cadastro'))
+            return redirect(url_for('tela_principal'))
             # return redirect(url_for('tela_principal'))
         print('Usuario não cadastrado!')
     return render_template('cadastro.html', form=form)
