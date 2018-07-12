@@ -11,7 +11,7 @@ def getEnderecoDao(stringEndereco1, latitude, longitude):
     return objEndereco
 
 
-def getEnderecoDao(stringEndereco1, latitude, longitude, stringEndereco2):
+def getEnderecoDao2(stringEndereco1, latitude, longitude, stringEndereco2):
     objEndereco = endereco.query.filter((endereco.local1 == stringEndereco1),
                                         (endereco.latitude == latitude),
                                         (endereco.longitude == longitude),

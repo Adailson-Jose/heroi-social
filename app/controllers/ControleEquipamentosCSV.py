@@ -35,5 +35,4 @@ def inserirEquipamentos(nomeDoTxt='equipamentos-de-monitoramento-e-ficalizacao.t
                     cont += 1
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
-
-print(inserirEquipamentos())
+# print(inserirEquipamentos())

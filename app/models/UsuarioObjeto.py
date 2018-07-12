@@ -6,8 +6,6 @@ class usuario(db.Model):
     email = db.Column(db.String(40), unique=True)
     password = db.Column(db.String(16))
 
-    usuario = db.relationship('usuario', backref='entidade', lazy='dynamic')
-
     def __init__(self, email, password):
         self.email = email
         self.password = password

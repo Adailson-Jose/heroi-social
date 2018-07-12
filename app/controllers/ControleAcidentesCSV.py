@@ -38,5 +38,4 @@ def inseriAcidentes(nomeDoTxt='tabela acidente com e s vítimas.txt'):
         print(cont)
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
-
-print(inseriAcidentes())
+# print(inseriAcidentes())

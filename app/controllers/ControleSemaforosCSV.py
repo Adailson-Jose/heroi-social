@@ -1,5 +1,5 @@
 from app.models.SemaforoObjeto import semaforo
-from app.persistence.EnderecoDao import getEnderecoDao
+from app.persistence.EnderecoDao import getEnderecoDao2
 from app.persistence.SemafaroDao import postSemafaro
 
 
@@ -26,7 +26,7 @@ def inseriAcidentes(nomeDoTxt='semaforos.txt'):
             sinalizadorciclista = i[6]
             latitude = i[7]
             longitude = i[8]
-            codEndereco = getEnderecoDao(localizacao1, latitude, longitude, localizacao2)
+            codEndereco = getEnderecoDao2(localizacao1, latitude, longitude, localizacao2)
             if codEndereco:
                 for i in codEndereco:
                     objSemaforo = semaforo(None, codSemaforo, funcionamento, sinalsonoro, sinalizadorciclista,
@@ -35,5 +35,4 @@ def inseriAcidentes(nomeDoTxt='semaforos.txt'):
                     cont += 1
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
-
-print(inseriAcidentes())
+# print(inseriAcidentes())

@@ -16,7 +16,6 @@ def inserirRegistroInfracao(nomeDoTxt='registro de infraçoes 2017(1-3).txt'):
     for i in lista:
         i = i.replace('\n', '')
         i = i.split(';')
-        print(i)
         if i[0] != 'datainfracao' and len(i) == 8:
             data_infracao = i[0]
             hora_infracao = i[1]
@@ -36,8 +35,6 @@ def inserirRegistroInfracao(nomeDoTxt='registro de infraçoes 2017(1-3).txt'):
                                                             i.codlocal)
                     postRegistroInfracao(objRegistroInfracao)
                     cont += 1
-        print(cont)
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
-
-print(inserirRegistroInfracao())
+# print(inserirRegistroInfracao())
