@@ -19,8 +19,11 @@ lm.init_app(app)
 from app.models import UsuarioObjeto, EnumTipoEntidade, EntidadeObjeto, AcidenteObjeto, AssinaturaObjeto, \
     EnderecoObjetoEntidade, EquipamentoFiscalizacaoObjeto, InfracaoObjeto, PacoteInformacaObjeto, \
     SemaforoObjeto, SugestaoObjeto, RegistroInfracaoObjeto, EnderecoObjeto
-from app.persistence import UserDao
-from app.controllers import UserControllers, LoginForms, CadastroForms, ContatoForms, ControleCSV
+
+from app.persistence import UserDao, EquipamentoDao, EnderecoDao, EnderecoEntidadeDao, AcidenteDao, RegistroInfracaoDao
+
+from app.controllers import UserControllers, LoginForms, CadastroForms, ContatoForms
+
 from app.api import Login, Cadastro, Sair, Sobre, Base, Contato, TelaPrincipal, LouderUser, MapaAcidentes \
     , GraficosAcidentes, GraficosInfracoes
 

@@ -26,3 +26,6 @@ class usuario(db.Model):
 
     def get_id(self):
         return str(self.id)
+
+    def setId(self, id):
+        self.id = id

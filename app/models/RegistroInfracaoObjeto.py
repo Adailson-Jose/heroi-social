@@ -14,8 +14,7 @@ class registro_infracao(db.Model):
     endereco_codlocal = db.Column(db.Integer, db.ForeignKey('endereco.codlocal'))
 
     def __init__(self, codregistro, data_infracao, hora_infracao, data_implantacao, agente_equipamento,
-                 infracao_codinfracao,
-                 descricaoinfracao, amparolegal, endereco_codlocal):
+                 infracao_codinfracao, descricaoinfracao, amparolegal, endereco_codlocal):
         self.codregistro = codregistro
         self.data_infracao = data_infracao
         self.hora_infracao = hora_infracao

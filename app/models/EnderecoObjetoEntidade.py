@@ -12,9 +12,6 @@ class enderecoEntidade(db.Model):
     numero = db.Column(db.Integer)
     cep = db.Column(db.Integer)
 
-    entidade = db.relationship('entidade', backref='enderecoEntidade', lazy='dynamic')
-
-
     def __init__(self, id, rua, bairro, cidade, estado, numero, cep):
         self.id = id
         self.rua = rua
