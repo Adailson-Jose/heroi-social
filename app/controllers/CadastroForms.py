@@ -14,3 +14,10 @@ class CadastroForm(FlaskForm):
     tipo_entidade = IntegerField("tipo_entidade", validators=[DataRequired(), validators.InputRequired()])
     razao_social = StringField("razao_social", validators=[DataRequired(), validators.length(min=0, max=50),
                                                            validators.input_required()])
+    rua = StringField("rua", validators=[DataRequired(), validators.input_required()])
+    bairro = StringField("bairro", validators=[DataRequired(), validators.input_required()])
+    cidade = StringField("cidade", validators=[DataRequired(), validators.input_required()])
+    estado = StringField("estado", validators=[DataRequired(), validators.input_required()])
+    numero = IntegerField("numero", validators=[DataRequired(), validators.input_required()])
+    cep = TelField("cep", validators=[DataRequired(), validators.length(min=8, max=8)])
+    # pesquisar como validar CEP (se ele é válido), e ver questão do tracinho
