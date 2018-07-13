@@ -1,22 +1,11 @@
 from flask import render_template
 from app import app
-'''from app.controllers.ControleCSV import getEqupamentos'''
+from app.controllers.ControleAcidentesCSV import getTodosAcidentes
+from app.controllers.ControleMPS import gerarMapadeCalor
 
-coordenadas =[]
-ruas =[]
+coordenadas =getTodosAcidentes()
 
-'''listaEquipamentos  = getEqupamentos()
-
-for i in listaEquipamentos:
-    localizacao= i.localizacao
-    ruas.append(localizacao)
-    latitude = float(i.latitude)
-    longitude = float(i.longitude)
-    lista = [latitude, longitude]
-    coordenadas.append(lista)
-    print(lista)'''
-#print(coordenadas)
-
-@app.route('/mapa-acidentes')
+@app.route('/mapa_calor_acidente')
 def mapa_acidente():
-    return render_template('mapa_acidentes.html', title='Mapa de Acidentes', coordenadas=coordenadas, ruas=ruas)
+    gerarMapadeCalor(coordenadas, 'mapa_calor_acidente')
+    return render_template('mapa_calor_acidente.html')

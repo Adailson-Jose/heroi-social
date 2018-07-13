@@ -1,6 +1,6 @@
 from app.models.EquipamentoFiscalizacaoObjeto import equipamento_fiscalizacao
-from app.persistence.EnderecoDao import getEnderecoDao
-from app.persistence.EquipamentoDao import postEquipamento
+from app.persistence.EnderecoDao import getEnderecoDao, getEnderecoID
+from app.persistence.EquipamentoDao import postEquipamento, getEqupamentos
 
 
 def lerTxt(nome_ficheiro):
@@ -10,6 +10,26 @@ def lerTxt(nome_ficheiro):
     ficheiro.close()
     return lista
 
+
+def getTodosEquipamentos():
+    coordenadas = []
+    ruas = []
+    listaLatitude = []
+    listaLongitude = []
+    listaEquipamentos = getEqupamentos()
+    for i in listaEquipamentos:
+        endereco  = getEnderecoID(i.endereco_codlocal)
+        for endereco in endereco:
+            if len((endereco.latitude).split('.')) == 2 and len((endereco.longitude).split('.')) == 2:
+                latitude = float(endereco.latitude)
+                longitude = float(endereco.longitude)
+                listaLatitude.append(latitude)
+                listaLongitude.append(longitude)
+                ruas.append(endereco.local1 +' (...'+ i.equipamento+'...)')
+    coordenadas.append(listaLatitude)
+    coordenadas.append(listaLongitude)
+    coordenadas.append(ruas)
+    return coordenadas
 
 def inserirEquipamentos(nomeDoTxt='equipamentos-de-monitoramento-e-ficalizacao.txt'):
     reader = lerTxt(nomeDoTxt)
