@@ -25,7 +25,7 @@ from app.persistence import UserDao, EquipamentoDao, EnderecoDao, EnderecoEntida
 from app.controllers import UserControllers, LoginForms, CadastroForms, ContatoForms, ControleEnderecoEntidade
 
 from app.api import Login, Cadastro, Sair, Sobre, Base, Contato, TelaPrincipal, LouderUser, MapaAcidentes \
-    , GraficosAcidentes, GraficosInfracoes
+    , GraficosAcidentes, GraficosInfracoes, MapaSemaforos
 
 # cria as tabelas no banco (caso nao existam)
 # db.create_all()

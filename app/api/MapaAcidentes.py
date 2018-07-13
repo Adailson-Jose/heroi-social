@@ -17,6 +17,6 @@ for i in listaEquipamentos:
     print(lista)'''
 #print(coordenadas)
 
-@app.route('/mapa-equipamentos')
+@app.route('/mapa-acidentes')
 def mapa_acidente():
-    return render_template('mapa_acidente.html', title='Mapa de equipamentos de fiscalização', coordenadas=coordenadas, ruas=ruas)
+    return render_template('mapa_acidentes.html', title='Mapa de Acidentes', coordenadas=coordenadas, ruas=ruas)
