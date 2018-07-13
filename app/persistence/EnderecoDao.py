@@ -20,6 +20,14 @@ def getEnderecoDao2(stringEndereco1, latitude, longitude, stringEndereco2):
         return False  # não tem esse endereco no banco
     return objEndereco
 
+
+def getEnderecoID(stringid):
+    objEndereco = endereco.query.filter(endereco.codlocal == stringid)
+    if objEndereco == None:
+        return False  # não tem esse endereco no banco
+    return objEndereco
+
+
 def postEndereco(objEndereco):
     db.session.add(objEndereco)
     if db.session.commit() == None:

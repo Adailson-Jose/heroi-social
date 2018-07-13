@@ -38,4 +38,4 @@ def inserirRegistroInfracao(nomeDoTxt='registro de infraçoes 2017(1-3).txt'):
                     cont += 1
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
-# print(inserirRegistroInfracao())
+print(inserirRegistroInfracao())

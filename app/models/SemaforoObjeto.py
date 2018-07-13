@@ -4,17 +4,15 @@ class semaforo(db.Model):
     __tablename__ = "semaforo"
 
     codsemaforo = db.Column(db.Integer, primary_key=True)
-    semaforo = db.Column(db.String(45))
     funcionamento = db.Column(db.String(45))
     sinalsonoro = db.Column(db.String(45))
     sinalizadorciclista = db.Column(db.String(145))
     utilizacao = db.Column(db.String(45))
     endereco_codlocal = db.Column(db.Integer, db.ForeignKey('endereco.codlocal'))
 
-    def __init__(self, codsemaforo, semaforo, funcionamento,
+    def __init__(self, codsemaforo, funcionamento,
                  sinalsonoro, sinalizadorciclista, utilizacao, endereco_codlocal):
         self.codsemaforo = codsemaforo
-        self.semaforo = semaforo
         self.funcionamento = funcionamento
         self.sinalsonoro = sinalsonoro
         self.sinalizadorciclista = sinalizadorciclista

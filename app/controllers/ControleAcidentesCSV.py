@@ -1,6 +1,7 @@
 from app.models.AcidenteObjeto import acidente
-from app.persistence.EnderecoDao import getEnderecoDao
-from app.persistence.AcidenteDao import postAcidente
+from app.models.EnderecoObjeto import endereco
+from app.persistence.EnderecoDao import getEnderecoID, getEnderecoDao
+from app.persistence.AcidenteDao import postAcidente, getAcidentes
 
 
 def lerTxt(nome_ficheiro):
@@ -10,6 +11,23 @@ def lerTxt(nome_ficheiro):
     ficheiro.close()
     return lista
 
+def getTodosAcidentes():
+    coordenadas = []
+    ruas = []
+    listaLatitude = []
+    listaLongitude = []
+    listaAcidente = getAcidentes()
+    for i in listaAcidente:
+        endereco  = getEnderecoID(i.endereco_codlocal)
+        for endereco in endereco:
+            if len((endereco.latitude).split('.')) == 2 and len((endereco.longitude).split('.')) == 2:
+                latitude = float(endereco.latitude)
+                longitude = float(endereco.longitude)
+                listaLatitude.append(latitude)
+                listaLongitude.append(longitude)
+    coordenadas.append(listaLatitude)
+    coordenadas.append(listaLongitude)
+    return coordenadas
 
 def inseriAcidentes(nomeDoTxt='tabela acidente com e s vítimas.txt'):
     lista = lerTxt(nomeDoTxt)
@@ -39,4 +57,4 @@ def inseriAcidentes(nomeDoTxt='tabela acidente com e s vítimas.txt'):
         print(cont)
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
-# print(inseriAcidentes())
+#print(inseriAcidentes())
