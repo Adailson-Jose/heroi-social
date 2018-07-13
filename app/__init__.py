@@ -22,10 +22,11 @@ from app.models import UsuarioObjeto, EnumTipoEntidade, EntidadeObjeto, Acidente
 
 from app.persistence import UserDao, EquipamentoDao, EnderecoDao, EnderecoEntidadeDao, AcidenteDao, RegistroInfracaoDao
 
-from app.controllers import UserControllers, LoginForms, CadastroForms, ContatoForms, ControleEnderecoEntidade
+from app.controllers import UserControllers, LoginForms, CadastroForms, ContatoForms, ControleEnderecoEntidade, \
+    PagamentoForms
 
-from app.api import Login, Cadastro, Sair, Sobre, Base, Contato, TelaPrincipal, LouderUser, MapaAcidentes \
-    , GraficosAcidentes, GraficosInfracoes, MapaSemaforos
+from app.api import Login, Cadastro, Sair, Pagamento, Base, Contato, TelaPrincipal, LouderUser, MapaAcidentes \
+    , GraficosAcidentes, GraficosInfracoes, MapaSemaforos, boleto
 
 # cria as tabelas no banco (caso nao existam)
 # db.create_all()
