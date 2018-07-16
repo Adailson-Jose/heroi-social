@@ -25,11 +25,13 @@ def getTodosAcidentes():
                 longitude = float(endereco.longitude)
                 listaLatitude.append(latitude)
                 listaLongitude.append(longitude)
+                ruas.append(i.data_abertura)
     coordenadas.append(listaLatitude)
     coordenadas.append(listaLongitude)
+    coordenadas.append(ruas)
     return coordenadas
 
-def inseriAcidentes(nomeDoTxt='tabela acidente com e s vítimas.txt'):
+def inseriAcidentes(nomeDoTxt='tabela acidente com  vítimas(2014-2016).txt'):
     lista = lerTxt(nomeDoTxt)
     cont = 0
     for i in lista:
