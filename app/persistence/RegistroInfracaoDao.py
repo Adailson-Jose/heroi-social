@@ -8,6 +8,13 @@ def postRegistroInfracao(registroInfracao):
         return True  # RegistroInfracao foi inserido no banco
     return False
 
+def getRegistroInfracaoData(stringData):
+    objRegistroInfracao = registro_infracao.query.filter((registro_infracao.data_infracao.like('%'+stringData+'%')))
+    if objRegistroInfracao == None:
+        return False  # não tem esse endereco no banco
+    return objRegistroInfracao
+
+
 
 def getRegistroInfracao():
     return registro_infracao.query.filter_by().all()

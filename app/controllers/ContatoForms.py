@@ -1,9 +1,8 @@
-from flask_wtf import Form, FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, IntegerField
-from wtforms.validators import DataRequired, InputRequired
+from flask_wtf import FlaskForm
+from wtforms import StringField
+from wtforms.validators import DataRequired
 from wtforms import validators, TextAreaField
 from wtforms.fields.html5 import EmailField
-from wtforms.fields.html5 import TelField
 
 class ContatoForm(FlaskForm):
     nome = StringField("Nome: *", validators=[DataRequired(), validators.length(min=3, max=35)])

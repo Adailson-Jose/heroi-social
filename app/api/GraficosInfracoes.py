@@ -1,5 +1,7 @@
 from flask import render_template
 from app import app
+from app.controllers.PesquisaForms import pesquisaForm
+from app.controllers.ControleRegistroInfracaoCSV import getTodosRegistrosDeInfracoes
 
 labels = [
     'JAN', 'FEB', 'MAR', 'APR',
@@ -7,11 +9,7 @@ labels = [
     'SEP', 'OCT', 'NOV', 'DEC'
 ]
 
-values = [
-    967.67, 1190.89, 1079.75, 1349.19,
-    2328.91, 2504.28, 2873.83, 4764.87,
-    4349.29, 6458.30, 9907, 16297
-]
+values = []
 
 colors = [
     "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA",
@@ -21,6 +19,10 @@ colors = [
 @app.route('/infracoesgraficos')
 def graficos_infracoes():
     bar_labels = labels
-    bar_values = values
+    bar_values = []
+    form = pesquisaForm()
+    if form.validate_on_submit():
+        bar_values = getTodosRegistrosDeInfracoes(form.buscaBairro.data)
+
     return render_template('graficos_infracoes.html', title='Grafico de Infracoes', max=17000, labels=bar_labels,
-                           values=bar_values, set=zip(values, labels, colors))
+                           values=bar_values, set=zip(values, labels, colors), form=form)

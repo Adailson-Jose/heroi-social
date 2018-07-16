@@ -1,6 +1,6 @@
 from app.models.RegistroInfracaoObjeto import registro_infracao
-from app.persistence.EnderecoDao import getEnderecoDao
-from app.persistence.RegistroInfracaoDao import postRegistroInfracao
+from app.persistence.EnderecoDao import  getEnderecoDao
+from app.persistence.RegistroInfracaoDao import getRegistroInfracaoData, postRegistroInfracao
 
 
 def lerTxt(nome_ficheiro):
@@ -10,6 +10,15 @@ def lerTxt(nome_ficheiro):
     ficheiro.close()
     return lista
 
+def getTodosRegistrosDeInfracoes(data):
+    datas = []
+    listaInfracoes = getRegistroInfracaoData(data)
+
+    for i in listaInfracoes:
+        datas.append(i.infracao_codinfracao)
+
+    return datas
+print(getTodosRegistrosDeInfracoes('2017-01-01'))
 
 def inserirRegistroInfracao(nomeDoTxt='registro de infraçoes 2017(1-3).txt'):
     lista = lerTxt(nomeDoTxt)
@@ -38,4 +47,4 @@ def inserirRegistroInfracao(nomeDoTxt='registro de infraçoes 2017(1-3).txt'):
                     cont += 1
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
-print(inserirRegistroInfracao())
+#print(inserirRegistroInfracao())

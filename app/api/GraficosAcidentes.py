@@ -1,5 +1,6 @@
 from flask import render_template
 from app import app
+from app.controllers.PesquisaForms import pesquisaForm
 
 labels = [
     'JAN', 'FEB', 'MAR', 'APR',
@@ -18,9 +19,13 @@ colors = [
     "#ABCDEF", "#DDDDDD", "#ABCABC", "#4169E1",
     "#C71585", "#FF4500", "#FEDCBA", "#46BFBD"]
 
-@app.route('/graficosacidentes')
+@app.route('/graficosacidentes', methods=["GET", "POST"])
 def graficos_acidentes():
     bar_labels = labels
     bar_values = values
+    form = pesquisaForm()
+    if form.validate_on_submit():
+        pass
+
     return render_template('graficos_acidentes.html', title='Grafico de Acidentes', max=17000, labels=bar_labels,
-                           values=bar_values, set=zip(values, labels, colors))
+                  values=bar_values, set=zip(values, labels, colors))
