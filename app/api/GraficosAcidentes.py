@@ -22,5 +22,5 @@ colors = [
 def graficos_acidentes():
     bar_labels = labels
     bar_values = values
-    return render_template('graficos_acidentes', title='Grafico de Acidentes', max=17000, labels=bar_labels,
+    return render_template('graficos_acidentes.html', title='Grafico de Acidentes', max=17000, labels=bar_labels,
                            values=bar_values, set=zip(values, labels, colors))
