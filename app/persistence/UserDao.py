@@ -5,6 +5,7 @@ def getUserDao(user):
     user = usuario.query.filter_by(email=user.email).first()
     if user == None:
         return False  # não tem esse user no banco
+    print(user)
     return user
 
 

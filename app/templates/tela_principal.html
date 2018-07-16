@@ -19,10 +19,12 @@
 <div class="jumbotron">
     {% if current_user.is_authenticated  %}
         <h1>Bem-Vindo ao Herói Social! </h1>
+
     {% else%}
     <h1>Cadastre-se já! </h1>
 
-        <h4>Cadastrando-se hoje, você ganhará acesso ilimitado por apenas R$ 0,50 durante uma hora!</h4>
+    <h4>Cadastrando-se hoje, você ganhará acesso ilimitado durante 24 horas!</h4>
+    <h5>Super oferta! Plano Master por 69,90 mensal.</h5>
 
     {% endif %}
 

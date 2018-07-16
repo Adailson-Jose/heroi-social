@@ -27,3 +27,4 @@ class usuario(db.Model):
 
     def setId(self, id):
         self.id = id
+
