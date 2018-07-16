@@ -26,8 +26,8 @@ def gerarMapadePonto(listaDeCoordenadas, nomeDoMapa):
     mapa = folium.Map(location=[-8.05428,-34.8813],zoom_start=12)
     marker_cluster = MarkerCluster().add_to(mapa)
     draw = Draw()
-
     draw.add_to(mapa)
+
     for la,lo, rua, in zip(listaDeCoordenadas[0],listaDeCoordenadas[1], listaDeCoordenadas[2]):
         folium.Marker(location=[la, lo], popup=rua, icon=folium.Icon(color='red')) .add_to(marker_cluster)
     mapa.save('app/templates/' + nomeDoMapa + ".html")
