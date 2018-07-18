@@ -38,22 +38,11 @@
                 <a href="#home3Submenu" data-toggle="collapse" aria-expanded="false"
                    class="dropdown-toggle">Correlações</a>
                 <ul class="collapse list-unstyled" id="home3Submenu">
-                    <!--
-                    <li>
-                        <a href="#">Infrações e Acidentes</a>
-                    </li>
-                    -->
+
                     <li>
                         <a href="{{url_for('mapa_semaforos') }}">Mapa de Semáforos</a>
                     </li>
-                    <!--
-                    <li>
-                        <a href="#">Equipamentos de Fiscalização e Infrações</a>
-                    </li>
-                    <li>
-                        <a href="#">Equipamentos de Fiscalização e Acidentes</a>
-                    </li>
-                    -->
+
                     <li>
                         <a href="{{url_for('mapa_acidente') }}">Mapa de calor Acidentes</a>
                     </li>
@@ -63,6 +52,10 @@
                     <li>
                         <a href="{{url_for('mapa_equipamentos') }}">Mapa de Equipamentos de Fiscalização</a>
                     </li>
+                    <li>
+                        <a href="{{url_for('gerente_correlacoes') }}">Gerente de correlações</a>
+                    </li>
+
                 </ul>
             </li>
             <li class="active">
@@ -179,6 +172,7 @@
                 $(this).toggleClass('active');
             });
         });
+
 
 </script>
 </body>

@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block title %}{{super()}}-Gerente de Correalacoes{% endblock %}
+{% block content %}
+<head>
+    <meta charset="utf-8"/>
+    <title>{{ title }}</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+    <link rel="stylesheet" href="\static\css\style5.css">
+</head>
+
+<body>
+<h2>Correlações </h2>
+<br>
+<div class="jumbotron">
+    <h2>Buscar por: </h2>
+    <br>
+    <form action="" method="POST">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <label>Buscar por data</label>
+            {{ form.buscaData(class="form-control",
+            placeholder="'2017-01-01'") }}
+            {% if form.errors.buscaData %}
+            <div> <!--class="alert alert-danger" role="alert"-->
+                <ul>
+                    {% for e in form.errors.buscaData %}
+                    <li>{{ e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Buscar</button>
+    </form>
+    <br>
+    <form action="" method="POST">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <label>Buscar por hora</label>
+            {{ form.buscaHora(class="form-control",
+            placeholder="'00:00(h:m)'") }}
+            {% if form.errors.buscaHora %}
+            <div> <!--class="alert alert-danger" role="alert"-->
+                <ul>
+                    {% for e in form.errors.buscaHora %}
+                    <li>{{ e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Buscar</button>
+    </form>
+    <br>
+    <form action="" method="POST">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <label>Buscar por ipo de ocorrencia</label>
+            {{ form.buscaTipoDeOcorrencia(class="form-control",
+            placeholder="'ATROPELAMENTO/ COLISÃO...'") }}
+            {% if form.errors.buscaTipoDeOcorrencia %}
+            <div> <!--class="alert alert-danger" role="alert"-->
+                <ul>
+                    {% for e in form.errors.buscaTipoDeOcorrencia %}
+                    <li>{{ e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Buscar</button>
+    </form>
+        <br>
+    <form action="" method="POST">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <label>Buscar por tipo</label>
+            {{ form.buscaTipo(class="form-control",
+            placeholder="'Pedestre/ Cliclista...'") }}
+            {% if form.errors.buscaTipo %}
+            <div> <!--class="alert alert-danger" role="alert"-->
+                <ul>
+                    {% for e in form.errors.buscaTipo %}
+                    <li>{{ e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Buscar</button>
+    </form>
+
+</div>
+<br>
+</body>
+{% endblock %}

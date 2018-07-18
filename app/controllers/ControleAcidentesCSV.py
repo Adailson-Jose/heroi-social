@@ -1,7 +1,6 @@
 from app.models.AcidenteObjeto import acidente
-from app.models.EnderecoObjeto import endereco
 from app.persistence.EnderecoDao import getEnderecoID, getEnderecoDao
-from app.persistence.AcidenteDao import postAcidente, getAcidentes
+from app.persistence.AcidenteDao import postAcidente, getAcidentesFiltro, getAcidentes
 
 
 def lerTxt(nome_ficheiro):
@@ -11,25 +10,51 @@ def lerTxt(nome_ficheiro):
     ficheiro.close()
     return lista
 
+def getTodosAcidentesFiltro(dados='', tipoDeDado=''):
+    coordenadas = []
+    ruas = []
+    listaLatitude = []
+    listaLongitude = []
+    listaAcidente = getAcidentesFiltro(dados, tipoDeDado)
+    if listaAcidente != None:
+        for i in listaAcidente:
+            endereco = getEnderecoID(i.endereco_codlocal)
+            for endereco in endereco:
+                print('Latitude: '+ endereco.latitude)
+                print('LONGITUDE: ' + endereco.longitude)
+                -34.8873398, -8.1002
+                if len((endereco.latitude).split('.')) == 2 and len((endereco.longitude).split('.')) == 2:
+                    latitude = float(endereco.latitude)
+                    longitude = float(endereco.longitude)
+                    listaLatitude.append(latitude)
+                    listaLongitude.append(longitude)
+        coordenadas.append(listaLatitude)
+        coordenadas.append(listaLongitude)
+        return coordenadas
+    return None
+
 def getTodosAcidentes():
     coordenadas = []
     ruas = []
     listaLatitude = []
     listaLongitude = []
     listaAcidente = getAcidentes()
-    for i in listaAcidente:
-        endereco  = getEnderecoID(i.endereco_codlocal)
-        for endereco in endereco:
-            if len((endereco.latitude).split('.')) == 2 and len((endereco.longitude).split('.')) == 2:
-                latitude = float(endereco.latitude)
-                longitude = float(endereco.longitude)
-                listaLatitude.append(latitude)
-                listaLongitude.append(longitude)
-                ruas.append(i.data_abertura)
-    coordenadas.append(listaLatitude)
-    coordenadas.append(listaLongitude)
-    coordenadas.append(ruas)
-    return coordenadas
+    if listaAcidente != None:
+        for i in listaAcidente:
+            endereco = getEnderecoID(i.endereco_codlocal)
+            for endereco in endereco:
+                if len((endereco.latitude).split('.')) == 2 and len((endereco.longitude).split('.')) == 2:
+                    latitude = float(endereco.latitude)
+                    longitude = float(endereco.longitude)
+                    listaLatitude.append(latitude)
+                    listaLongitude.append(longitude)
+                    ruas.append(endereco.local1)
+        coordenadas.append(listaLatitude)
+        coordenadas.append(listaLongitude)
+        coordenadas.append(ruas)
+        return coordenadas
+    return None
+
 
 def inseriAcidentes(nomeDoTxt='tabela acidente com  vítimas(2014-2016).txt'):
     lista = lerTxt(nomeDoTxt)

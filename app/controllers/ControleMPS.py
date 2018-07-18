@@ -28,18 +28,19 @@ def gerarMapadePonto(listaDeCoordenadas, nomeDoMapa):
     draw = Draw()
     draw.add_to(mapa)
 
-    for la,lo, rua, in zip(listaDeCoordenadas[0],listaDeCoordenadas[1], listaDeCoordenadas[2]):
-        folium.Marker(location=[la, lo], popup=rua, icon=folium.Icon(color='red')) .add_to(marker_cluster)
+    if listaDeCoordenadas != None:
+        for la,lo, rua, in zip(listaDeCoordenadas[0],listaDeCoordenadas[1], listaDeCoordenadas[2]):
+            folium.Marker(location=[la, lo], popup=rua, icon=folium.Icon(color='red')) .add_to(marker_cluster)
     mapa.save('app/templates/' + nomeDoMapa + ".html")
 
 def gerarMapadeCalor(listaDeCoordenadas, nomeDoMapa):
-
-    coordenadas = []
+    lCoordenadas = []
     mapa_calor = folium.Map(location=[-8.05428,-34.8813],zoom_start=12)
+    print(len(listaDeCoordenadas[0]))
+    if listaDeCoordenadas != None:
+        for la,lo in zip(listaDeCoordenadas[0],listaDeCoordenadas[1]):
+            lCoordenadas.append([la,lo])
 
-    for la,lo in zip(listaDeCoordenadas[0],listaDeCoordenadas[1]):
-        coordenadas.append([la,lo])
-
-    mapa_calor.add_child(plugins.HeatMap(coordenadas))
-    mapa_calor.save('app/templates/' + nomeDoMapa + ".html")
+        mapa_calor.add_child(plugins.HeatMap(lCoordenadas))
+        mapa_calor.save('app/templates/' + nomeDoMapa + ".html")
 

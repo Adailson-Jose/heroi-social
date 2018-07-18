@@ -18,7 +18,7 @@ def getTodosRegistrosDeInfracoes(data):
         datas.append(i.infracao_codinfracao)
 
     return datas
-print(getTodosRegistrosDeInfracoes('2017-01-01'))
+#print(getTodosRegistrosDeInfracoes('2017-01-01'))
 
 def inserirRegistroInfracao(nomeDoTxt='registro de infraçoes 2017(1-3).txt'):
     lista = lerTxt(nomeDoTxt)
