@@ -54,6 +54,22 @@ def getTodosAcidentes():
         return coordenadas
     return None
 
+def getMesesAcidentes():
+    listaAcidente = getAcidentes()
+
+    dic_meses ={}
+    if listaAcidente != None:
+        for i in listaAcidente:
+            data = (i.data_abertura).split("/")
+            if len(data) != 1:
+              mes = data[1]
+              if mes in dic_meses:
+                dic_meses[mes] += 1
+              else:
+                dic_meses[mes] = 1
+    if len(dic_meses) != 0:
+      return dic_meses.keys(), dic_meses.values()
+    return None, None
 
 def inseriAcidentes(nomeDoTxt='tabela acidente com  vítimas(2014-2016).txt'):
     lista = lerTxt(nomeDoTxt)
