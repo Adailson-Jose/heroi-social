@@ -20,16 +20,15 @@ def getTodosAcidentesFiltro(dados='', tipoDeDado=''):
         for i in listaAcidente:
             endereco = getEnderecoID(i.endereco_codlocal)
             for endereco in endereco:
-                print('Latitude: '+ endereco.latitude)
-                print('LONGITUDE: ' + endereco.longitude)
-                -34.8873398, -8.1002
                 if len((endereco.latitude).split('.')) == 2 and len((endereco.longitude).split('.')) == 2:
                     latitude = float(endereco.latitude)
                     longitude = float(endereco.longitude)
                     listaLatitude.append(latitude)
                     listaLongitude.append(longitude)
+                    ruas.append(endereco.local1)
         coordenadas.append(listaLatitude)
         coordenadas.append(listaLongitude)
+        coordenadas.append(ruas)
         return coordenadas
     return None
 
