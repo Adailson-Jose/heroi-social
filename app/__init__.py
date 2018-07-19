@@ -26,7 +26,7 @@ from app.controllers import UserControllers, LoginForms, CadastroForms, ContatoF
     PagamentoForms, PesquisaForms
 
 from app.api import Login, Cadastro, Sair, Pagamento, Base, Contato, TelaPrincipal, LouderUser, MapaAcidentes \
-    , GraficosAcidentes, GraficosInfracoes, MapaSemaforos, boleto,MapaEquipamentos, MapaPontoAcidentes, GerenteDeCorrelacoes\
+    , GraficosAcidentes, GraficosInfracoes, MapaSemaforos, Boleto,MapaEquipamentos, MapaPontoAcidentes, GerenteDeCorrelacoes\
     ,MapaAcidentesFiltro
 
 # cria as tabelas no banco (caso nao existam)
