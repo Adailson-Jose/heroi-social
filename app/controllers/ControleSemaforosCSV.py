@@ -1,5 +1,5 @@
 from app.models.SemaforoObjeto import semaforo
-from app.persistence.EnderecoDao import getEnderecoDao2
+from app.persistence.EnderecoDao import getEnderecoDao
 from app.persistence.SemafaroDao import postSemafaro
 
 
@@ -10,7 +10,7 @@ def lerTxt(nome_ficheiro):
     ficheiro.close()
     return lista
 
-
+'''
 def inserirSemaforos(nomeDoTxt='semaforos.txt'):
     lista = lerTxt(nomeDoTxt)
     cont = 0
@@ -38,3 +38,4 @@ def inserirSemaforos(nomeDoTxt='semaforos.txt'):
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
 #print(inserirSemaforos())
+'''

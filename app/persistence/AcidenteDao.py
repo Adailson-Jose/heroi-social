@@ -1,6 +1,6 @@
 from app import db
 from app.models.AcidenteObjeto import acidente
-
+from app.persistence.EnderecoDao import getEnderecoDao
 
 def postAcidente(objAcidente):
     db.session.add(objAcidente)
@@ -53,5 +53,15 @@ def getAcidentesFiltro(stringData='', tipoDeDado=''):
             if objAcidente == None:
                 return None
             return objAcidente
+
+    return None
+
+def getAcidentesFiltro2(comp_select_ano, comp_select_mes, comp_select_bairro, comp_select_qtd_vitimas):
+
+    if comp_select_ano != '' and comp_select_mes !='' and comp_select_bairro !=''and comp_select_qtd_vitimas !='':
+        objAcidente = acidente.query.filter((acidente.quantidade_vitimas == comp_select_qtd_vitimas)).all()
+        if objAcidente == None:
+            return None
+        return objAcidente
 
     return None

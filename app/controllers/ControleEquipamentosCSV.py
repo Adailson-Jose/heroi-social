@@ -1,7 +1,7 @@
 from app.models.EquipamentoFiscalizacaoObjeto import equipamento_fiscalizacao
 from app.persistence.EnderecoDao import getEnderecoDao, getEnderecoID
 from app.persistence.EquipamentoDao import postEquipamento, getEqupamentos
-
+import time
 
 def lerTxt(nome_ficheiro):
     ficheiro = open(nome_ficheiro, encoding="utf8")
@@ -31,6 +31,7 @@ def getTodosEquipamentos():
     coordenadas.append(ruas)
     return coordenadas
 
+'''
 def inserirEquipamentos(nomeDoTxt='equipamentos-de-monitoramento-e-ficalizacao.txt'):
     reader = lerTxt(nomeDoTxt)
     cont = 0
@@ -54,6 +55,16 @@ def inserirEquipamentos(nomeDoTxt='equipamentos-de-monitoramento-e-ficalizacao.t
                                                               contrato, nome, fluxo_veiculo, i.codlocal)
                     postEquipamento(objEquipamento)
                     cont += 1
+    print(("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont))))
+    print('*')
+    print('**')
+    print('***')
+    print('****')
+    time.sleep(999999999)
+    print(("Fim do time." ))
+    time.sleep(9999999999)
+
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
 #print(inserirEquipamentos())
+'''

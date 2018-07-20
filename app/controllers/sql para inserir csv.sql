@@ -1,9 +1,9 @@
-create schema `app-heroi-social`;
+#create schema `app-heroi-social`;
 
 
 use `app-heroi-social`;
 
-LOAD DATA INFILE 'C:\Users\gabyz\PycharmProjects\heroi-social\app\controllers\endereco.csv'
+LOAD DATA INFILE '/home/bsi/Downloads/endereco.csv'
 INTO TABLE endereco
 CHARACTER SET utf8
 FIELDS TERMINATED BY ';'

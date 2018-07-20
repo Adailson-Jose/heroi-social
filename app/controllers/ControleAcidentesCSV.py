@@ -1,7 +1,7 @@
 from app.models.AcidenteObjeto import acidente
 from app.persistence.EnderecoDao import getEnderecoID, getEnderecoDao
-from app.persistence.AcidenteDao import postAcidente, getAcidentesFiltro, getAcidentes
-
+from app.persistence.AcidenteDao import postAcidente, getAcidentesFiltro, getAcidentes, getAcidentesFiltro2
+import  time
 
 def lerTxt(nome_ficheiro):
     ficheiro = open(nome_ficheiro, encoding="utf8")
@@ -31,6 +31,28 @@ def getTodosAcidentesFiltro(dados='', tipoDeDado=''):
         coordenadas.append(ruas)
         return coordenadas
     return None
+
+def getTodosAcidentesFiltro2(comp_select_ano ='', comp_select_mes ='', comp_select_bairro ='', comp_select_qtd_vitimas =''):
+    listaAcidente = getAcidentesFiltro2(comp_select_ano, comp_select_mes, comp_select_bairro, comp_select_qtd_vitimas)
+    totalDeAcidente = 0
+    #print(comp_select_bairro)
+    #print(comp_select_ano)
+    #print(comp_select_mes)
+    #print(comp_select_qtd_vitimas)
+    if listaAcidente != None:
+        print(len(listaAcidente))
+        for i in listaAcidente:
+            endereco = getEnderecoID(i.endereco_codlocal)
+            #print(i.data_abertura)
+            for endereco in endereco:
+
+                if str(comp_select_bairro.upper()) == endereco.bairro and str(comp_select_ano) in i.data_abertura and\
+                        comp_select_mes in i.data_abertura:
+                    totalDeAcidente += 1
+
+        print(totalDeAcidente)
+        return totalDeAcidente
+    return False
 
 def getTodosAcidentes():
     coordenadas = []
@@ -71,6 +93,7 @@ def getMesesAcidentes():
       return dic_meses.keys(), dic_meses.values()
     return None, None
 
+'''
 def inseriAcidentes(nomeDoTxt='tabela acidente com  vítimas(2014-2016).txt'):
     lista = lerTxt(nomeDoTxt)
     cont = 0
@@ -96,7 +119,16 @@ def inseriAcidentes(nomeDoTxt='tabela acidente com  vítimas(2014-2016).txt'):
                                            quantidade_vitimas, descricao, i.codlocal, tipo)
                     postAcidente(objAcidente)
                     cont += 1
-        print(cont)
+    print(("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont))))
+    print('*')
+    print('**')
+    print('***')
+    print('****')
+    time.sleep(999999999)
+    print(("Fim do time."))
+    time.sleep(9999999999)
+
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
 #print(inseriAcidentes())
+'''

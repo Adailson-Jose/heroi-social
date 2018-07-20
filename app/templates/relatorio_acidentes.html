@@ -11,116 +11,128 @@
 <body>
 <h2>Relatório de Acidentes</h2>
 <br>
-<div class="jumbotron">
-    <h2>Buscar por: </h2>
-    <br>
-    <h6>Buscar por ano:</h6>
-    <select id=cbAno>
-    <option value="" ></option>
-    <option value="2014" >2014</option>
-    <option value="2015" >2015</option>
-    <option value="2016" >2016</option>
-    </select>
-    <br>
-    <br>
-    <h6>Buscar por mês:</h6>
-    <select id=cbMes>
-    <option value="" ></option>
-    <option value="jan" >Janeiro</option>
-    <option value="fev" >Fevereiro</option>
-    <option value="mar" >Março</option>
-    <option value="abril" >Abril</option>
-    <option value="maio" >Maio</option>
-    <option value="jun" >Junho</option>
-    <option value="jul" >Julho</option>
-    <option value="agost" >Agosto</option>
-    <option value="set" >Setembro</option>
-    <option value="out" >Outubro</option>
-    <option value="nov" >Novembro</option>
-    <option value="dez" >Dezembro</option>
-    </select>
-    <br>
-    <br>
-    <h6>Buscar por bairro:</h6>
-    <select id=cbBairro>
-    <option value="" ></option>
-    <option value="jan" >Espinheiro</option>
-    <option value="fev" >Casa Forte</option>
-    <option value="mar" >Cordeiro</option>
-    <option value="abril" >Madalena</option>
-    <option value="maio" >Torre</option>
-    <option value="jun" >Casa Amarela</option>
-    <option value="jul" >Encruzilhada</option>
-    <option value="agost" >Graças</option>
-    <option value="set" >Santo Amaro</option>
-    <option value="out" >Boa Viagem</option>
-    <option value="nov" >Pina</option>
-    <option value="dez" >Aflitos</option>
-    <option value="dez" >Rosarinho</option>
-    </select>
-    <br>
-    <br>
-    <h6>Buscar por quantidade de vítimas:</h6>
-    <select id=cbQtdVitimas>
-    <option value="" ></option>
-    <option value="1" >1</option>
-    <option value="2" >2</option>
-    <option value="3" >3</option>
-    <option value="4" >4</option>
-    <option value="5" >5</option>
-    </select>
-    <br>
-    <br>
-    <button type="submit" class="btn btn-lg btn-primary btn-block">Buscar</button>
-</div>
+<form class="form-inline" method="POST" action="{{ url_for('relatorio_acidentes') }}">
+    <div class="jumbotron">
+        <h2>Buscar por: </h2>
+        <br>
+        <div class="input-group">
+            <h6>Buscar por ano:</h6>
+            <span class="input-group-addon"></span>
+            <select name="comp_select_ano" class="selectpicker form-control">
+                <option value=""></option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <h6>Buscar por mês:</h6>
+            <span class="input-group-addon"></span>
+            <select name="comp_select_mes" class="selectpicker form-control">
+                <option value=""></option>
+                <option value="01">Janeiro</option>
+                <option value="02">Fevereiro</option>
+                <option value="03">Março</option>
+                <option value="04">Abril</option>
+                <option value="05">Maio</option>
+                <option value="06">Junho</option>
+                <option value="07">Julho</option>
+                <option value="08">Agosto</option>
+                <option value="09">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <h6>Buscar por bairro:</h6>
+            <span class="input-group-addon"></span>
+            <select name="comp_select_bairro" class="selectpicker form-control">
+                <option value=""></option>
+                <option value="Espinheiro">Espinheiro</option>
+                <option value="Casa Fort">Casa Forte</option>
+                <option value="Cordeiro">Cordeiro</option>
+                <option value="Madalena">Madalena</option>
+                <option value="maio">Torre</option>
+                <option value="Torre">Casa Amarela</option>
+                <option value="Encruzilhada">Encruzilhada</option>
+                <option value="Gracas">Graças</option>
+                <option value="set">Santo Amaro</option>
+                <option value="Boa Viagem">Boa Viagem</option>
+                <option value="Pina">Pina</option>
+                <option value="Aflitos">Aflitos</option>
+                <option value="Rosarinho">Rosarinho</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <h6>Buscar por quantidade de vítimas:</h6>
+            <span class="input-group-addon"></span>
+            <select name="comp_select_qtd_vitimas" class="selectpicker form-control">
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
 
-<div class="jumbotron">
-    <h3><center>Relatório:</center></h3>
-    <br>
-    <h5>Total de acidentes nesse período e bairro: </h5>
-    <br>
-    <h6>Total de acidentes sem vítimas: </h6>
-    <h6>Total de acidentes com vítimas: </h6>
-    <br>
-    <h5>Tipo:</h5>
-    <br>
-    <h6>Automóvel: </h6>
-    <h6>Pedestre: </h6>
-    <h6>Ciclomotor: </h6>
-    <h6>Ciclista: </h6>
-    <h6>Motocicleta: </h6>
-    <h6>Outros: </h6>
-    <br>
-    <h5>Tipo de ocorrência:</h5>
-    <br>
-    <h6>Colisão/choque: </h6>
-    <h6>Colisão com ciclista: </h6>
-    <h6>Atropelamento: </h6>
-    <h6>Acidente de percurso: </h6>
-    <br>
-    <h5>Ranking dos bairros com mais riscos de acidentes:</h5>
-    <br>
-    <h6>1. Grupo 1 (risco mais alto): </h6>
-    <h6>Espinheiro: </h6>
-    <h6>Casa Forte: </h6>
-    <h6>Cordeiro: </h6>
-    <br>
-    <h6>2. Grupo 2: </h6>
-    <h6>Madalena: </h6>
-    <h6>Torre: </h6>
-    <h6>Casa Amarela: </h6>
-    <br>
-    <h6>3. Grupo 3: </h6>
-    <h6>Encruzilhada: </h6>
-    <h6>Graças: </h6>
-    <h6>Santo Amaro: </h6>
-    <br>
-    <h6>4. Grupo 4 (risco mais baixo): </h6>
-    <h6>Boa Viagem: </h6>
-    <h6>Pina: </h6>
-    <h6>Aflitos: </h6>
-    <h6>Rosarinho: </h6>
-</div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Buscar</button>
+        <br>
+        <br>
+        <div class="jumbotron">
+            <h3>
+                <center>Relatório baseado nos dados selecionados acima.:</center>
+            </h3>
+            <br>
+            <h6>Total de acidentes com vítimas: </h6>
+            <br>
+            <font color="00FF00">{{totalDeAcidentes}}.</font>
+            <br>
+            <h5>Tipo de envolvidos:</h5>
+            <br>
+            <h6>Automóvel: </h6>
+            <h6>Pedestre: </h6>
+            <h6>Ciclomotor: </h6>
+            <h6>Ciclista: </h6>
+            <h6>Motocicleta: </h6>
+            <h6>Outros: </h6>
+            <br>
+            <h5>Tipo de ocorrência:</h5>
+            <br>
+            <h6>Colisão/choque: </h6>
+            <h6>Colisão com ciclista: </h6>
+            <h6>Atropelamento: </h6>
+            <h6>Acidente de percurso: </h6>
+            <br>
+            <h5>Ranking dos bairros com mais riscos de acidentes:</h5>
+            <br>
+            <h6>1. Grupo 1 (risco mais alto): </h6>
+            <h6>Espinheiro: </h6>
+            <h6>Casa Forte: </h6>
+            <h6>Cordeiro: </h6>
+            <br>
+            <h6>2. Grupo 2: </h6>
+            <h6>Madalena: </h6>
+            <h6>Torre: </h6>
+            <h6>Casa Amarela: </h6>
+            <br>
+            <h6>3. Grupo 3: </h6>
+            <h6>Encruzilhada: </h6>
+            <h6>Graças: </h6>
+            <h6>Santo Amaro: </h6>
+            <br>
+            <h6>4. Grupo 4 (risco mais baixo): </h6>
+            <h6>Boa Viagem: </h6>
+            <h6>Pina: </h6>
+            <h6>Aflitos: </h6>
+            <h6>Rosarinho: </h6>
+        </div>
+    </div>
+
+</form>
+
+
 </body>
 <!-- http://www.devfuria.com.br/html-css/formularios/combobox/ -->
 {% endblock %}
