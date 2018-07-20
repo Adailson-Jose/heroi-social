@@ -19,7 +19,7 @@
         <div class="form-group">
             <label>Buscar por data</label>
             {{ form.buscaData(class="form-control",
-            placeholder="'2017-01-01'") }}
+            placeholder="'2017'") }}
             {% if form.errors.buscaData %}
             <div> <!--class="alert alert-danger" role="alert"-->
                 <ul>
@@ -38,7 +38,7 @@
         <div class="form-group">
             <label>Buscar por hora</label>
             {{ form.buscaHora(class="form-control",
-            placeholder="'00:00(h:m)'") }}
+            placeholder="'00:00(HH:mm)'") }}
             {% if form.errors.buscaHora %}
             <div> <!--class="alert alert-danger" role="alert"-->
                 <ul>
@@ -55,9 +55,9 @@
     <form action="" method="POST">
         {{ form.csrf_token }}
         <div class="form-group">
-            <label>Buscar por ipo de ocorrencia</label>
+            <label>Buscar por tipo de ocorrencia</label>
             {{ form.buscaTipoDeOcorrencia(class="form-control",
-            placeholder="'ATROPELAMENTO/ COLISÃO...'") }}
+            placeholder="'ATROPELAMENTO/ COLISÃO'") }}
             {% if form.errors.buscaTipoDeOcorrencia %}
             <div> <!--class="alert alert-danger" role="alert"-->
                 <ul>
@@ -76,11 +76,30 @@
         <div class="form-group">
             <label>Buscar por tipo</label>
             {{ form.buscaTipo(class="form-control",
-            placeholder="'Pedestre/ Ciclista...'") }}
+            placeholder="'Pedestre/ Ciclista'") }}
             {% if form.errors.buscaTipo %}
             <div> <!--class="alert alert-danger" role="alert"-->
                 <ul>
                     {% for e in form.errors.buscaTipo %}
+                    <li>{{ e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Buscar</button>
+    </form>
+    <br>
+    <form action="" method="POST">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <label>Buscar Quantidade de Vítimas</label>
+            {{ form.buscaQtd(class="form-control",
+            placeholder="'Digite a quantidade de Vítimas Ex: 1'") }}
+            {% if form.errors.buscaQtd %}
+            <div> <!--class="alert alert-danger" role="alert"-->
+                <ul>
+                    {% for e in form.errors.buscaQtd %}
                     <li>{{ e }}</li>
                     {% endfor %}
                 </ul>

@@ -14,24 +14,35 @@ def  getAcidentes():
     return objAcidente
 
 def getAcidentesFiltro(stringData='', tipoDeDado=''):
+
     if stringData != '' and tipoDeDado !='':
+
         if tipoDeDado =='buscaData':
             objAcidente = acidente.query.filter((acidente.data_abertura.like('%'+stringData+'%')))
             if objAcidente == None:
                 return None
             return objAcidente
+
         elif tipoDeDado =='buscaHora':
             objAcidente = acidente.query.filter((acidente.hora_abertura.like('%'+stringData+'%')))
             if objAcidente == None:
                 return None
             return objAcidente
+
         elif tipoDeDado =='buscaTipoDeOcorrencia':
             objAcidente = acidente.query.filter((acidente.tipo_ocorrencia.like('%'+stringData+'%')))
             if objAcidente == None:
                 return None
             return objAcidente
+
         elif tipoDeDado =='buscaTipo':
             objAcidente = acidente.query.filter((acidente.tipo.like('%'+stringData+'%')))
+            if objAcidente == None:
+                return None
+            return objAcidente
+
+        elif tipoDeDado == 'buscaQtd':
+            objAcidente = acidente.query.filter((acidente.quantidade_vitimas.like('%' + stringData + '%')))
             if objAcidente == None:
                 return None
             return objAcidente
