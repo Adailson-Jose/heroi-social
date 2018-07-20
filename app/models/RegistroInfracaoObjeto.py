@@ -12,9 +12,11 @@ class registro_infracao(db.Model):
     descricaoinfracao = db.Column(db.String(300))
     amparolegal = db.Column(db.String(45))
     endereco_codlocal = db.Column(db.Integer, db.ForeignKey('endereco.codlocal'))
+    bairro = db.Column(db.String(45))
+
 
     def __init__(self, codregistro, data_infracao, hora_infracao, data_implantacao, agente_equipamento,
-                 infracao_codinfracao, descricaoinfracao, amparolegal, endereco_codlocal):
+                 infracao_codinfracao, descricaoinfracao, amparolegal, endereco_codlocal, bairro):
         self.codregistro = codregistro
         self.data_infracao = data_infracao
         self.hora_infracao = hora_infracao
@@ -24,3 +26,4 @@ class registro_infracao(db.Model):
         self.descricaoinfracao = descricaoinfracao
         self.amparolegal = amparolegal
         self.endereco_codlocal = endereco_codlocal
+        self.bairro = bairro

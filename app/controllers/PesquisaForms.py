@@ -10,3 +10,4 @@ class pesquisaForm(FlaskForm):
     buscaTipoDeOcorrencia = StringField("buscaTipoDeOcorrencia")
     buscaTipo = StringField("buscaTipo")
     buscaQtd = StringField('buscaQtd')
+    buscaLocal= StringField('buscaLocal')

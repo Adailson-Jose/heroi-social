@@ -46,5 +46,12 @@ def getAcidentesFiltro(stringData='', tipoDeDado=''):
             if objAcidente == None:
                 return None
             return objAcidente
+        elif tipoDeDado == 'buscaLocal':
+
+            objAcidente = acidente.query.filter("SELECT latitude, longitude, local1, codlocal FROM acidente, endereco where endereco_codlocal in(SELECT codlocal FROM endereco where local1 LIKE '%Boa viagem%') and codlocal = endereco_codlocal").all()
+
+            if objAcidente == None:
+                return None
+            return objAcidente
 
     return None

@@ -48,4 +48,11 @@ def gerente_correlacoes():
                 return redirect(url_for('mapa_acidente_filtro'))
             return render_template('correalacoes.html', form=form)
 
+        elif form.buscaLocal.data != '' and len(form.buscaLocal.data) > 0:
+            listaCoordenadas = getTodosAcidentesFiltro(form.buscaLocal.data, 'buscaLocal')
+            if listaCoordenadas != None:
+                gerarMapadeCalor(listaCoordenadas, 'mapa_calor_acidente')
+                return redirect(url_for('mapa_acidente_filtro'))
+            return render_template('correalacoes.html', form=form)
+
     return render_template('correalacoes.html', form=form)

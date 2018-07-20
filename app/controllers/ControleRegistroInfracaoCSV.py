@@ -18,7 +18,6 @@ def getTodosRegistrosDeInfracoes(data):
         datas.append(i.infracao_codinfracao)
 
     return datas
-#print(getTodosRegistrosDeInfracoes('2017-01-01'))
 
 def inserirRegistroInfracao(nomeDoTxt='registro de infraçoes 2017(1-3).txt'):
     lista = lerTxt(nomeDoTxt)
@@ -35,14 +34,14 @@ def inserirRegistroInfracao(nomeDoTxt='registro de infraçoes 2017(1-3).txt'):
             descricaoinfracao = i[5]
             amparolegal = i[6]
             localcometimento = i[7]
-
+            bairro = i[8]
             codEndereco = getEnderecoDao(localcometimento, '', '')
             if codEndereco != False:
                 for i in codEndereco:
                     objRegistroInfracao = registro_infracao(None, data_infracao, hora_infracao, data_implantacao,
                                                             agente_equipamento,
                                                             infracao_codinfracao, descricaoinfracao, amparolegal,
-                                                            i.codlocal)
+                                                            i.codlocal, bairro)
                     postRegistroInfracao(objRegistroInfracao)
                     cont += 1
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))

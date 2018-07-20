@@ -108,6 +108,25 @@
         </div>
         <button type="submit" class="btn btn-lg btn-primary btn-block">Buscar</button>
     </form>
+    <br>
+    <form action="" method="POST">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <label>Buscar Por Local</label>
+            {{ form.buscaLocal(class="form-control",
+            placeholder="'Digite o local Ex: Boa Viagem'") }}
+            {% if form.errors.buscaLocal %}
+            <div> <!--class="alert alert-danger" role="alert"-->
+                <ul>
+                    {% for e in form.errors.buscaLocal %}
+                    <li>{{ e }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Buscar</button>
+    </form>
 
 </div>
 <br>
