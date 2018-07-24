@@ -9,8 +9,28 @@ def relatorio_acidentes():
     comp_select_bairro = request.form.get('comp_select_bairro')
     comp_select_qtd_vitimas = request.form.get('comp_select_qtd_vitimas')
     qtdAcidentes = 0
+    automovel = 0
+    pedestre = 0
+    ciclomotor = 0
+    ciclista = 0
+    motocicleta = 0
+    outros = 0
+    choque = 0
+    choqueCiclista = 0
+    atropelamento = 0
+    acidentePercurso = 0
+    riscoMaisAlto = ['teste', 'teste2']
+    riscoAlto = ['teste', 'teste2']
+    riscoMedio = ['teste', 'teste2']
+    riscoBaixo = ['teste', 'teste2']
     if comp_select_ano != '' and comp_select_mes !='' and comp_select_bairro !=''and comp_select_qtd_vitimas !='':
         qtdAcidentes = getTodosAcidentesFiltro2(comp_select_ano, comp_select_mes, comp_select_bairro,
                                                comp_select_qtd_vitimas)
 
-    return render_template('relatorio_acidentes.html', title='Relatório de Acidentes', totalDeAcidentes=qtdAcidentes)
+    return render_template('relatorio_acidentes.html', title='Relatório de Acidentes', totalDeAcidentes=qtdAcidentes,
+                           automovel=automovel,
+                           pedestre=pedestre, ciclomotor=ciclomotor, ciclista=ciclista, motocicleta=motocicleta,
+                           outros=outros, choque=choque,
+                           choqueCiclista=choqueCiclista, atropelamento=atropelamento,
+                           acidentePercurso=acidentePercurso, riscoMaisAlto=riscoMaisAlto,
+                           riscoAlto=riscoAlto, riscoMedio=riscoMedio, riscoBaixo=riscoBaixo)
