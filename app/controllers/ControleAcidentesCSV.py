@@ -46,8 +46,8 @@ def getTodosAcidentesFiltro2(comp_select_ano ='', comp_select_mes ='', comp_sele
             #print(i.data_abertura)
             for endereco in endereco:
 
-                if str(comp_select_bairro.upper()) == endereco.bairro and str(comp_select_ano) in i.data_abertura and\
-                        comp_select_mes in i.data_abertura:
+                if str(comp_select_bairro.upper()) == endereco.bairro and str(comp_select_ano) in i.data_abertura and \
+                        comp_select_mes in i.data_abertura[3::]:
                     totalDeAcidente += 1
 
         print(totalDeAcidente)

@@ -20,7 +20,6 @@
             <span class="input-group-addon"></span>
             <select name="comp_select_ano" class="selectpicker form-control">
                 <option value=""></option>
-                <option value="2014">2014</option>
                 <option value="2015">2015</option>
                 <option value="2016">2016</option>
             </select>
@@ -48,9 +47,11 @@
             <h6>Buscar por bairro:</h6>
             <span class="input-group-addon"></span>
             <select name="comp_select_bairro" class="selectpicker form-control">
+                <option value=""></option>
                 <option value="AFLITOS">Aflitos</option>
                 <option value="AFOGADOS">Afogados</option>
                 <option value="BAIRRO DO RECIFE">Bairro do Recife</option>
+                <option value="BOA VIAGEM">Boa Viagem</option>
                 <option value="BOA VISTA">Boa Vista</option>
                 <option value="CASA AMARELA">Casa Amarela</option>
                 <option value="CASA FORTE">Casa Forte</option>
@@ -90,15 +91,14 @@
         <br>
         <br>
         <div class="jumbotron">
-            <h3>
-                <center>Relatório baseado nos dados selecionados acima.:</center>
-            </h3>
+            <h2>
+                <center>Relatório baseado nos dados selecionados acima:</center>
+            </h2>
             <br>
-            <h6>Total de acidentes com vítimas: </h6>
+            <h5>Total de acidentes com vítimas: {{totalDeAcidentes}}</h5>
             <br>
-            <font color="00FF00">{{totalDeAcidentes}}.</font>
-            <br>
-            <h5>Tipo de envolvidos:</h5>
+
+            <center><h5>Tipo de envolvidos</h5></center>
             <br>
             <h6>Automóvel: </h6>
             <h6>Pedestre: </h6>
