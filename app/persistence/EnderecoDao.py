@@ -45,3 +45,10 @@ def postEndereco(objEndereco):
     if db.session.commit() == None:
         return True  # endereco foi inserido no banco
     return False
+
+
+def getEnderecoLocal(bairro):
+    objEndereco = endereco.query.filter(endereco.bairro == bairro)
+    if objEndereco == None:
+        return False  # não tem esse endereco no banco
+    return objEndereco

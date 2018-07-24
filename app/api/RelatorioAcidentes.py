@@ -1,7 +1,9 @@
 from flask import render_template, request
 from app import app
-from app.controllers.ControleAcidentesCSV import getTodosAcidentesFiltro2
+from app.controllers.ControleAcidentesCSV import getTodosAcidentesFiltro2, getBairrosMaisAcidentes
 
+contDeBairros = getBairrosMaisAcidentes()
+print(len(contDeBairros))
 @app.route('/relatorio_acidentes', methods=["GET", "POST"])
 def relatorio_acidentes():
     comp_select_ano = request.form.get('comp_select_ano')

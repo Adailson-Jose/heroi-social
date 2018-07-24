@@ -1,7 +1,5 @@
-from app.models.AcidenteObjeto import acidente
-from app.persistence.EnderecoDao import getEnderecoID, getEnderecoDao
-from app.persistence.AcidenteDao import postAcidente, getAcidentesFiltro, getAcidentes, getAcidentesFiltro2
-import  time
+from app.persistence.EnderecoDao import getEnderecoID, getEnderecoLocal
+from app.persistence.AcidenteDao import getAcidentesFiltro, getAcidentes, getAcidentesFiltro2, getAcidentesFiltro3
 
 def lerTxt(nome_ficheiro):
     ficheiro = open(nome_ficheiro, encoding="utf8")
@@ -35,15 +33,9 @@ def getTodosAcidentesFiltro(dados='', tipoDeDado=''):
 def getTodosAcidentesFiltro2(comp_select_ano ='', comp_select_mes ='', comp_select_bairro ='', comp_select_qtd_vitimas =''):
     listaAcidente = getAcidentesFiltro2(comp_select_ano, comp_select_mes, comp_select_bairro, comp_select_qtd_vitimas)
     totalDeAcidente = 0
-    #print(comp_select_bairro)
-    #print(comp_select_ano)
-    #print(comp_select_mes)
-    #print(comp_select_qtd_vitimas)
     if listaAcidente != None:
-        print(len(listaAcidente))
         for i in listaAcidente:
             endereco = getEnderecoID(i.endereco_codlocal)
-            #print(i.data_abertura)
             for endereco in endereco:
 
                 if str(comp_select_bairro.upper()) == endereco.bairro and str(comp_select_ano) in i.data_abertura and \
@@ -52,6 +44,33 @@ def getTodosAcidentesFiltro2(comp_select_ano ='', comp_select_mes ='', comp_sele
 
         print(totalDeAcidente)
         return totalDeAcidente
+    return False
+
+
+def getBairrosMaisAcidentes():
+    listaBairros = ["AFOGADOS", "BAIRRO DO RECIFE", "BOA VIAGEM", "BOA VISTA", "CASA AMARELA", "CASA FORTE", "CORDEIRO",
+                    "DERBY", "DOIS UNIDOS", "ENCRUZILHADA",
+                    "ESPINHEIRO", "GRAÇAS", "ILHA DO LEIRE", "ILHA DO RETIRO", "IPUTINGA", "MADALENA", "PARNAMIRIM",
+                    "PINA", "SANTO AMARO", "SANTO ANTÔNIO",
+                    "SÃO JOSÉ", "SOLEDADE", "TORRE"]
+    listaResultado = []
+    codListaAcidentes = []
+
+    lista = getAcidentes()
+    if lista != None:
+        for ac in lista:
+            codListaAcidentes.append(ac.endereco_codlocal)
+
+    for i in listaBairros:
+        cont = 0
+        listaEnderecos = getEnderecoLocal(i)
+        if listaEnderecos != None:
+            for end in listaEnderecos:
+                if end.codlocal in codListaAcidentes:
+                    cont += 1
+            listaResultado.append(cont)
+    if len(listaResultado) != 0:
+        return listaResultado
     return False
 
 def getTodosAcidentes():

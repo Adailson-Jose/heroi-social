@@ -65,3 +65,7 @@ def getAcidentesFiltro2(comp_select_ano, comp_select_mes, comp_select_bairro, co
         return objAcidente
 
     return None
+
+
+def getAcidentesFiltro3():
+    pass
