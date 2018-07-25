@@ -50,7 +50,7 @@ def getTodosAcidentesFiltro2(comp_select_ano ='', comp_select_mes ='', comp_sele
 def getBairrosMaisAcidentes():
     listaBairros = ["AFOGADOS", "BAIRRO DO RECIFE", "BOA VIAGEM", "BOA VISTA", "CASA AMARELA", "CASA FORTE", "CORDEIRO",
                     "DERBY", "DOIS UNIDOS", "ENCRUZILHADA",
-                    "ESPINHEIRO", "GRAÇAS", "ILHA DO LEIRE", "ILHA DO RETIRO", "IPUTINGA", "MADALENA", "PARNAMIRIM",
+                    "ESPINHEIRO", "GRAÇAS", "ILHA DO LEITE", "ILHA DO RETIRO", "IPUTINGA", "MADALENA", "PARNAMIRIM",
                     "PINA", "SANTO AMARO", "SANTO ANTÔNIO",
                     "SÃO JOSÉ", "SOLEDADE", "TORRE"]
     listaResultado = []
