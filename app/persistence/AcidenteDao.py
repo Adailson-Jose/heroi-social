@@ -1,5 +1,6 @@
 from app import db
 from app.models.AcidenteObjeto import acidente
+from app.models.EnderecoObjeto import endereco
 from app.persistence.EnderecoDao import getEnderecoDao
 
 def postAcidente(objAcidente):
@@ -47,9 +48,7 @@ def getAcidentesFiltro(stringData='', tipoDeDado=''):
                 return None
             return objAcidente
         elif tipoDeDado == 'buscaLocal':
-
-            objAcidente = acidente.query.filter("SELECT latitude, longitude, local1, codlocal FROM acidente, endereco where endereco_codlocal in(SELECT codlocal FROM endereco where local1 LIKE '%Boa viagem%') and codlocal = endereco_codlocal").all()
-
+            objAcidente = acidente.query.join((endereco, acidente.endereco_codlocal==endereco.codlocal)).filter(endereco.local1.like('%' + stringData + '%'))
             if objAcidente == None:
                 return None
             return objAcidente
