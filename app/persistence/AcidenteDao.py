@@ -47,6 +47,7 @@ def getAcidentesFiltro(stringData='', tipoDeDado=''):
             if objAcidente == None:
                 return None
             return objAcidente
+
         elif tipoDeDado == 'buscaLocal':
             objAcidente = acidente.query.join((endereco, acidente.endereco_codlocal==endereco.codlocal)).filter(endereco.local1.like('%' + stringData + '%'))
             if objAcidente == None:

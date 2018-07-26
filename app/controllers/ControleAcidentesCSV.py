@@ -32,18 +32,63 @@ def getTodosAcidentesFiltro(dados='', tipoDeDado=''):
 
 def getTodosAcidentesFiltro2(comp_select_ano ='', comp_select_mes ='', comp_select_bairro ='', comp_select_qtd_vitimas =''):
     listaAcidente = getAcidentesFiltro2(comp_select_ano, comp_select_mes, comp_select_bairro, comp_select_qtd_vitimas)
+    listaDados = []
     totalDeAcidente = 0
+    automovel = 0
+    pedestre = 0
+    ciclomotor = 0
+    ciclista = 0
+    motocicleta = 0
+    outros = 0
+    colisao = 0
+    atropelamento = 0
+    colisaoCiclista = 0
+    acidentePercurso = 0
+    outros2 = 0
     if listaAcidente != None:
         for i in listaAcidente:
             endereco = getEnderecoID(i.endereco_codlocal)
             for endereco in endereco:
-
                 if str(comp_select_bairro.upper()) == endereco.bairro and str(comp_select_ano) in i.data_abertura and \
                         comp_select_mes in i.data_abertura[3::]:
                     totalDeAcidente += 1
+                    if i.tipo.upper() == 'ALTOMOVEL':
+                        automovel += 1
+                    elif i.tipo.upper() == 'PEDESTRE':
+                        pedestre += 1
+                    elif i.tipo.upper() == 'CICLOMOTOR':
+                        ciclomotor += 1
+                    elif i.tipo.upper() == 'CICLISTA':
+                        ciclista += 1
+                    elif i.tipo.upper() == 'MOTOCICLETA':
+                        motocicleta += 1
+                    else:
+                        outros += 1
 
-        print(totalDeAcidente)
-        return totalDeAcidente
+                    if i.tipo_ocorrencia.upper() == 'COLISÃO':
+                        colisao += 1
+                    elif i.tipo_ocorrencia.upper() == 'ATROPELAMENTO':
+                        atropelamento += 1
+                    elif i.tipo_ocorrencia.upper() == 'COLISÃO COM CICLISTA':
+                        colisaoCiclista += 1
+                    elif i.tipo_ocorrencia.upper() == 'ACIDENTE DE PERCURSO':
+                        acidentePercurso += 1
+                    else:
+                        outros2 += 1
+        listaDados.append(totalDeAcidente)
+        listaDados.append(automovel)
+        listaDados.append(pedestre)
+        listaDados.append(ciclomotor)
+        listaDados.append(ciclista)
+        listaDados.append(motocicleta)
+        listaDados.append(outros)
+        listaDados.append(colisao)
+        listaDados.append(colisaoCiclista)
+        listaDados.append(atropelamento)
+        listaDados.append(acidentePercurso)
+        listaDados.append(outros2)
+        print(listaDados)
+        return listaDados
     return False
 
 
