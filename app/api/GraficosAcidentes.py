@@ -21,6 +21,6 @@ def graficos_acidentes():
     if comp_select_ano != '':
         bar_values = getTodosAcidenteAno(str(comp_select_ano))
         maximo = max(bar_values)
-        print(maximo)
+        print(sum(bar_values))
     return render_template('graficos_acidentes.html', title='Grafico de Acidentes', max=maximo, labels=bar_labels,
                            values=bar_values, set=zip(bar_values, labels, colors))
