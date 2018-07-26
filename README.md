@@ -1,4 +1,4 @@
-# heroi-social
+# Herói Social
 
 Versão: 1.0
 
