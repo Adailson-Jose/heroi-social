@@ -1,5 +1,5 @@
 from app.persistence.EnderecoDao import getEnderecoID, getEnderecoLocal
-from app.persistence.AcidenteDao import getAcidentesFiltro, getAcidentes, getAcidentesFiltro2, getAcidentesFiltro3
+from app.persistence.AcidenteDao import getAcidentesFiltro, getAcidentes, getAcidentesFiltro2
 
 def lerTxt(nome_ficheiro):
     ficheiro = open(nome_ficheiro, encoding="utf8")
@@ -87,10 +87,8 @@ def getTodosAcidentesFiltro2(comp_select_ano ='', comp_select_mes ='', comp_sele
         listaDados.append(atropelamento)
         listaDados.append(acidentePercurso)
         listaDados.append(outros2)
-        print(listaDados)
         return listaDados
     return False
-
 
 def getBairrosMaisAcidentes():
     listaBairros = ["AFOGADOS", "BAIRRO DO RECIFE", "BOA VIAGEM", "BOA VISTA", "CASA AMARELA", "CASA FORTE", "CORDEIRO",

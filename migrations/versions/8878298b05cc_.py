@@ -47,11 +47,7 @@ def upgrade():
                     sa.Column('cep', sa.Integer(), nullable=True),
                     sa.PrimaryKeyConstraint('id')
                     )
-    op.create_table('infracao',
-                    sa.Column('codinfracao', sa.Integer(), nullable=False),
-                    sa.Column('descricao_infracao', sa.String(length=100), nullable=True),
-                    sa.PrimaryKeyConstraint('codinfracao')
-                    )
+
     op.create_table('pacote_informacao',
                     sa.Column('id', sa.Integer(), nullable=False),
                     sa.Column('nome_pacote', sa.String(length=30), nullable=True),
@@ -106,9 +102,6 @@ def upgrade():
                     sa.Column('codequip', sa.Integer(), nullable=False),
                     sa.Column('equipamento', sa.String(length=100), nullable=True),
                     sa.Column('velocidade_regulamentada', sa.String(length=5), nullable=True),
-                    sa.Column('contrato', sa.String(length=25), nullable=True),
-                    sa.Column('nome', sa.String(length=5), nullable=True),
-                    sa.Column('fluxo_veiculo', sa.Integer(), nullable=True),
                     sa.Column('endereco_codlocal', sa.Integer(), nullable=True),
                     sa.ForeignKeyConstraint(['endereco_codlocal'], ['endereco.codlocal'], ),
                     sa.PrimaryKeyConstraint('codequip')

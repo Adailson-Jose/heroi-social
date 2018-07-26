@@ -14,32 +14,31 @@
 <body>
 <h2>Gráficos de Acidentes</h2>
 <br>
+<div class="jumbotron">
+    <form class="form-inline" method="POST" action="{{ url_for('graficos_acidentes') }}">
+        <div class="jumbotron">
+            <h2>Buscar por: </h2>
+            <br>
+            <div class="input-group">
+                <h6>Buscar por ano:&nbsp</h6>
+                <span class="input-group-addon"></span>
+                <select name="comp_select_ano" class="selectpicker form-control">
+                    <option value=""></option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                </select>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-lg btn-primary btn-block">Buscar</button>
+        </div>
+        <br>
 
-<div class="buscadores" style="display: flex; justify-content: center; align-items: center">
-    <form action=" " method="post" style="padding-right: 60px">
-      <label for="buscaBairro">Buscar por bairro:</label>
-
-      <div class="containerSearch">
-        <input type="search" id="buscaBairro" name="q">
-        <button type="submit">&#128269;</button>
-      </div>
-    </form>
-    <form action=" " method="post" style="padding-left: 60px">
-      <label for="buscaRua">Buscar por rua/avenida:</label>
-
-      <div class="containerSearch">
-        <input type="search" id="buscaRua" name="q">
-        <button type="submit">&#128269;</button>
-      </div>
-    </form>
-</div>
-<br>
-
-<div class="graficos">
-    <div class="graficos1e2" style="display: flex">
-        <div class="grafico1" style="padding: 20px">
-            <canvas id="barchart" width="480" height="300"></canvas>
-            <script>
+        <div class="graficos">
+            <div class="graficos1e2" style="display: flex">
+                <div class="grafico1" style="padding: 20px">
+                    <canvas id="barchart" width="480" height="300"></canvas>
+                    <script>
               // bar chart data
               var barData = {
                 labels : [
@@ -76,11 +75,12 @@
                }
              );
 
-            </script>
-        </div>
-        <div class="grafico2" style="padding: 20px">
-            <canvas id="linechart" width="480" height="300"></canvas>
-            <script>
+
+                    </script>
+                </div>
+                <div class="grafico2" style="padding: 20px">
+                    <canvas id="linechart" width="480" height="300"></canvas>
+                    <script>
               // bar chart data
               var barData = {
                 labels : [
@@ -129,30 +129,12 @@
                 bezierCurve: false,
               });
                console.log(barData);
-            </script>
-        </div>
-    </div>
-    <div class="grafico3" style="padding: 20px">
-        <canvas id="pizzachart" width="500" height="350"></canvas>
-        <script>
-              var pieData = [
-                {% for item, label, colors in set %}
-                  {
-                    value: {{item}},
-                    label: "{{label}}",
-                    color : "{{colors}}"
-                  },
-                {% endfor %}
-              ];
-              // get pie chart canvas
-              var mychart = document.getElementById("pizzachart").getContext("2d");
-              steps = 10
-              max = {{ max }}
-              // draw pie chart
-              new Chart(document.getElementById("pizzachart").getContext("2d")).Pie(pieData);
 
-        </script>
-    </div>
-</div>
+
+
+                    </script>
+                </div>
+            </div>
+        </div>
 </body>
 {% endblock %}

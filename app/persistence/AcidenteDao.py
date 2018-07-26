@@ -67,5 +67,10 @@ def getAcidentesFiltro2(comp_select_ano, comp_select_mes, comp_select_bairro, co
     return None
 
 
-def getAcidentesFiltro3():
-    pass
+def getAcidentesMes(ano=''):
+    if ano != '':
+        objAcidente = acidente.query.filter((acidente.data_abertura.like('%' + ano + '%')))
+        if objAcidente == None:
+            return None
+        return objAcidente
+    return None
