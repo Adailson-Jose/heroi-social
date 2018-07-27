@@ -49,34 +49,31 @@ def getTodosAcidentesFiltro2(comp_select_ano ='', comp_select_mes ='', comp_sele
     outros2 = 0
     if listaAcidente != None:
         for i in listaAcidente:
-            endereco = getEnderecoID(i.endereco_codlocal)
-            for endereco in endereco:
-                if str(comp_select_bairro.upper()) == endereco.bairro and str(comp_select_ano) in i.data_abertura and \
-                        comp_select_mes in i.data_abertura[3::]:
-                    totalDeAcidente += 1
-                    if i.tipo.upper() == 'ALTOMOVEL':
-                        automovel += 1
-                    elif i.tipo.upper() == 'PEDESTRE':
-                        pedestre += 1
-                    elif i.tipo.upper() == 'CICLOMOTOR':
-                        ciclomotor += 1
-                    elif i.tipo.upper() == 'CICLISTA':
-                        ciclista += 1
-                    elif i.tipo.upper() == 'MOTOCICLETA':
-                        motocicleta += 1
-                    else:
-                        outros += 1
+            totalDeAcidente += 1
 
-                    if i.tipo_ocorrencia.upper() == 'COLISÃO':
-                        colisao += 1
-                    elif i.tipo_ocorrencia.upper() == 'ATROPELAMENTO':
-                        atropelamento += 1
-                    elif i.tipo_ocorrencia.upper() == 'COLISÃO COM CICLISTA':
-                        colisaoCiclista += 1
-                    elif i.tipo_ocorrencia.upper() == 'ACIDENTE DE PERCURSO':
-                        acidentePercurso += 1
-                    else:
-                        outros2 += 1
+            if i.tipo.upper() == 'AUTOMOVEL' or i.tipo.upper() == 'AUTOMÓVEIS' or i.tipo.upper() == 'AUTOMOVEIS':
+                automovel += 1
+            elif i.tipo.upper() == 'PEDESTRE' or i.tipo.upper() == 'PEDESTRES':
+                pedestre += 1
+            elif i.tipo.upper() == 'CICLOMOTOR' or i.tipo.upper() == 'CICLOMOTORES':
+                ciclomotor += 1
+            elif i.tipo.upper() == 'CICLISTA' or i.tipo.upper() == 'CICLISTAS':
+                ciclista += 1
+            elif i.tipo.upper() == 'MOTOCICLETA' or i.tipo.upper() == 'MOTOCICLETAS':
+                motocicleta += 1
+            else:
+                outros += 1
+
+            if i.tipo_ocorrencia.upper() == 'COLISÃO':
+                colisao += 1
+            elif i.tipo_ocorrencia.upper() == 'ATROPELAMENTO':
+                atropelamento += 1
+            elif i.tipo_ocorrencia.upper() == 'COLISÃO COM CICLISTA':
+                colisaoCiclista += 1
+            elif i.tipo_ocorrencia.upper() == 'ACIDENTE DE PERCURSO':
+                acidentePercurso += 1
+            else:
+                outros2 += 1
         listaDados.append(totalDeAcidente)
         listaDados.append(automovel)
         listaDados.append(pedestre)
