@@ -6,18 +6,16 @@ class registro_infracao(db.Model):
     codregistro = db.Column(db.Integer, primary_key=True, autoincrement=True)
     data_infracao = db.Column(db.String(45))
     hora_infracao = db.Column(db.String(10))
-    data_implantacao = db.Column(db.String(45))
     agente_equipamento = db.Column(db.String(45))
     infracao_codinfracao = db.Column(db.Integer)
     descricaoinfracao = db.Column(db.String(300))
     endereco_codlocal = db.Column(db.Integer, db.ForeignKey('endereco.codlocal'))
 
-    def __init__(self, codregistro, data_infracao, hora_infracao, data_implantacao, agente_equipamento,
+    def __init__(self, codregistro, data_infracao, hora_infracao, agente_equipamento,
                  infracao_codinfracao, descricaoinfracao, endereco_codlocal):
         self.codregistro = codregistro
         self.data_infracao = data_infracao
         self.hora_infracao = hora_infracao
-        self.data_implantacao = data_implantacao
         self.agente_equipamento = agente_equipamento
         self.infracao_codinfracao = infracao_codinfracao
         self.descricaoinfracao = descricaoinfracao

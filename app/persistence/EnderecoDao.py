@@ -28,7 +28,7 @@ def getEnderecoDao2(stringEndereco1, stringEndereco2):
     return objEndereco
 
 def getEnderecoDao(stringEndereco1):
-    objEndereco = endereco.query.filter((endereco.local1 == stringEndereco1)).first()
+    objEndereco = endereco.query.filter((endereco.local1.like('%' + stringEndereco1 + '%'))).first()
     if objEndereco == None:
         return False  # não tem esse endereco no banco
     return objEndereco

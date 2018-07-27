@@ -1,5 +1,5 @@
 from app.models.RegistroInfracaoObjeto import registro_infracao
-from app.persistence.EnderecoDao import getEnderecoDao2
+from app.persistence.EnderecoDao import getEnderecoDao
 from app.persistence.RegistroInfracaoDao import getRegistroInfracaoData, postRegistroInfracao
 import time
 
@@ -22,21 +22,23 @@ def getTodosRegistrosDeInfracoes(data):
 def inserirRegistroInfracao(nomeDoTxt='registro de infraçoes 2017(1-3).txt'):
     lista = lerTxt(nomeDoTxt)
     cont = 0
+    cont2 = 0
     for i in lista:
         i = i.replace('\n', '')
         i = i.split(';')
-        if i[0] != 'DATAINFRACAO' and len(i) == 9:
+        if i[0] != 'DATAINFRACAO' and len(i) == 7:
             data_infracao = i[0]
             hora_infracao = i[1]
-            data_implantacao = i[2]
-            agente_equipamento = i[3]
-            infracao_codinfracao = i[4]
-            descricaoinfracao = i[5]
-            localcometimento = i[7]
-            bairro = i[8]
-            codEndereco = getEnderecoDao2(localcometimento, bairro)
+            agente_equipamento = i[2]
+            infracao_codinfracao = i[3]
+            descricaoinfracao = i[4]
+            localcometimento = i[5][:-1]
+            bairro = i[6]
+            codEndereco = getEnderecoDao(localcometimento)
             if codEndereco != False:
-                objRegistroInfracao = registro_infracao(None, data_infracao, hora_infracao, data_implantacao,
+                cont2 += 1
+                print('contador interno: ', cont2)
+                objRegistroInfracao = registro_infracao(None, data_infracao, hora_infracao,
                                                         agente_equipamento,
                                                         infracao_codinfracao, descricaoinfracao,
                                                         codEndereco.codlocal)
@@ -44,14 +46,14 @@ def inserirRegistroInfracao(nomeDoTxt='registro de infraçoes 2017(1-3).txt'):
             cont += 1
         print('contador externo: ', cont)
 
-    print(("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont))))
+    print(("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont2))))
     print('*')
     print('**')
     print('***')
     print('****')
-    time.sleep(999)
+    time.sleep(200000)
     print(("Fim do time."))
-    time.sleep(999)
+    time.sleep(200000)
 
-    return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
+    return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont2)))
 # print(inserirRegistroInfracao())
