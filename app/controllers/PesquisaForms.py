@@ -11,3 +11,4 @@ class pesquisaForm(FlaskForm):
     buscaTipo = StringField("buscaTipo")
     buscaQtd = StringField('buscaQtd')
     buscaLocal= StringField('buscaLocal')
+    buscaLocalAcidenteSemaforo = StringField('buscaLocalAcidenteSemaforo')

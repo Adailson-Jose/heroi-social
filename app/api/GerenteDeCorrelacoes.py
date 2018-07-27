@@ -2,7 +2,7 @@ from app import app
 from flask import render_template, redirect, url_for
 from app.controllers.PesquisaForms import pesquisaForm
 from app.controllers.ControleMPS import gerarMapadeCalor
-from app.controllers.ControleAcidentesCSV import getTodosAcidentesFiltro
+from app.controllers.ControleAcidentesCSV import getTodosAcidentesFiltro, getTodosAcidentesSemaforosFiltro
 
 
 
@@ -50,6 +50,13 @@ def gerente_correlacoes():
 
         elif form.buscaLocal.data != '' and len(form.buscaLocal.data) > 0:
             listaCoordenadas = getTodosAcidentesFiltro(form.buscaLocal.data, 'buscaLocal')
+            if listaCoordenadas != None:
+                gerarMapadeCalor(listaCoordenadas, 'mapa_calor_acidente')
+                return redirect(url_for('mapa_acidente_filtro'))
+            return render_template('correalacoes.html', form=form)
+
+        elif form.buscaLocalAcidenteSemaforo.data != '' and len(form.buscaLocalAcidenteSemaforo.data) > 0:
+            listaCoordenadas = getTodosAcidentesSemaforosFiltro(form.buscaLocalAcidenteSemaforo.data, 'buscaLocalAcidenteSemaforo')
             if listaCoordenadas != None:
                 gerarMapadeCalor(listaCoordenadas, 'mapa_calor_acidente')
                 return redirect(url_for('mapa_acidente_filtro'))

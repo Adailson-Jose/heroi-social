@@ -32,6 +32,26 @@ def getTodosAcidentesFiltro(dados='', tipoDeDado=''):
         return coordenadas
     return None
 
+def getTodosAcidentesSemaforosFiltro(dados='', tipoDeDado=''):
+    coordenadas = []
+    ruas = []
+    listaLatitude = []
+    listaLongitude = []
+    listaAcidente = getAcidentesFiltro(dados, tipoDeDado)
+    if listaAcidente != None:
+        for endereco in listaAcidente:
+            if len((endereco.latitude).split('.')) == 2 and len((endereco.longitude).split('.')) == 2:
+                latitude = float(endereco.latitude)
+                longitude = float(endereco.longitude)
+                listaLatitude.append(latitude)
+                listaLongitude.append(longitude)
+                ruas.append(endereco)
+        coordenadas.append(listaLatitude)
+        coordenadas.append(listaLongitude)
+        coordenadas.append(ruas)
+        return coordenadas
+    return None
+
 def getTodosAcidentesFiltro2(comp_select_ano ='', comp_select_mes ='', comp_select_bairro ='', comp_select_qtd_vitimas =''):
     listaAcidente = getAcidentesFiltro2(comp_select_ano, comp_select_mes, comp_select_bairro, comp_select_qtd_vitimas)
     listaDados = []

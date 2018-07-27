@@ -1,6 +1,7 @@
 from app import db
 from app.models.AcidenteObjeto import acidente
 from app.models.EnderecoObjeto import endereco
+from app.models.SemaforoObjeto import semaforo
 from app.persistence.EnderecoDao import getEnderecoDao
 
 def postAcidente(objAcidente):
@@ -26,9 +27,9 @@ def getAcidentesFiltro(stringData='', tipoDeDado=''):
 
         elif tipoDeDado =='buscaHora':
             objAcidente = acidente.query.filter((acidente.hora_abertura.like('%'+stringData+'%')))
+            return objAcidente
             if objAcidente == None:
                 return None
-            return objAcidente
 
         elif tipoDeDado =='buscaTipoDeOcorrencia':
             objAcidente = acidente.query.filter((acidente.tipo_ocorrencia.like('%'+stringData+'%')))
@@ -51,6 +52,12 @@ def getAcidentesFiltro(stringData='', tipoDeDado=''):
         elif tipoDeDado == 'buscaLocal':
             objAcidente = acidente.query.join((endereco, acidente.endereco_codlocal == endereco.codlocal)).filter(
                 endereco.local1.like('%' + stringData + '%'))
+            if objAcidente == None:
+                return None
+            return objAcidente
+
+        elif tipoDeDado == 'buscaLocalAcidenteSemaforo':
+            objAcidente = endereco.query.outerjoin(acidente, semaforo).filter(endereco.local1.like('%' + stringData + '%'))
             if objAcidente == None:
                 return None
             return objAcidente
