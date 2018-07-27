@@ -1,5 +1,5 @@
 from app.models.EquipamentoFiscalizacaoObjeto import equipamento_fiscalizacao
-from app.persistence.EnderecoDao import getEnderecoDao, getEnderecoID
+from app.persistence.EnderecoDao import getEnderecoDao3, getEnderecoID
 from app.persistence.EquipamentoDao import postEquipamento, getEqupamentos
 import time
 
@@ -31,7 +31,7 @@ def getTodosEquipamentos():
     coordenadas.append(ruas)
     return coordenadas
 
-'''
+
 def inserirEquipamentos(nomeDoTxt='equipamentos-de-monitoramento-e-ficalizacao.txt'):
     reader = lerTxt(nomeDoTxt)
     cont = 0
@@ -44,27 +44,23 @@ def inserirEquipamentos(nomeDoTxt='equipamentos-de-monitoramento-e-ficalizacao.t
             latitude = i[2]
             longitude = i[3]
             velocidade = i[4]
-            contrato = i[5]
-            nome = i[6]
-            fluxo_veiculo = i[7]
 
-            codEndereco = getEnderecoDao(endereco, latitude, longitude)
+            codEndereco = getEnderecoDao3(endereco, latitude, longitude)
             if codEndereco:
                 for i in codEndereco:
-                    objEquipamento = equipamento_fiscalizacao(None, tipoEquipamento, velocidade,
-                                                              contrato, nome, fluxo_veiculo, i.codlocal)
+                    objEquipamento = equipamento_fiscalizacao(None, tipoEquipamento, velocidade, i.codlocal)
                     postEquipamento(objEquipamento)
                     cont += 1
+                    print(cont)
     print(("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont))))
     print('*')
     print('**')
     print('***')
     print('****')
-    time.sleep(999999999)
+    time.sleep(9999)
     print(("Fim do time." ))
-    time.sleep(9999999999)
+    time.sleep(9999)
 
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
 #print(inserirEquipamentos())
-'''

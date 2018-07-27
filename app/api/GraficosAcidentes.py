@@ -1,6 +1,6 @@
 from flask import render_template, request
 from app import app
-from app.controllers.ControleGrafioAcidente import getTodosAcidenteAno
+from app.controllers.ControleGraficoAcidente import getTodosAcidenteAno
 
 labels = [
     'JAN', 'FEB', 'MAR', 'APR',

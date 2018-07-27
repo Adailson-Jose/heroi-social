@@ -2,7 +2,7 @@ from app import db
 from app.models.EnderecoObjeto import endereco
 
 
-def getEnderecoDao(stringEndereco1, latitude, longitude):
+def getEnderecoDao3(stringEndereco1, latitude, longitude):
     objEndereco = endereco.query.filter((endereco.local1 == stringEndereco1),
                                         (endereco.latitude == latitude),
                                         (endereco.longitude == longitude))
@@ -11,7 +11,7 @@ def getEnderecoDao(stringEndereco1, latitude, longitude):
     return objEndereco
 
 
-def getEnderecoDao(stringEndereco1, latitude, longitude, stringEndereco2):
+def getEnderecoDao4(stringEndereco1, latitude, longitude, stringEndereco2):
     objEndereco = endereco.query.filter((endereco.local1 == stringEndereco1),
                                         (endereco.latitude == latitude),
                                         (endereco.longitude == longitude),
@@ -20,7 +20,8 @@ def getEnderecoDao(stringEndereco1, latitude, longitude, stringEndereco2):
         return False  # não tem esse endereco no banco
     return objEndereco
 
-def getEnderecoDao(stringEndereco1, stringEndereco2):
+
+def getEnderecoDao2(stringEndereco1, stringEndereco2):
     objEndereco = endereco.query.filter((endereco.local1 == stringEndereco1), (endereco.bairro == stringEndereco2)).first()
     if objEndereco == None:
         return False  # não tem esse endereco no banco

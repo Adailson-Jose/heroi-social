@@ -1,6 +1,7 @@
 from app.models.SemaforoObjeto import semaforo
-from app.persistence.EnderecoDao import getEnderecoDao
+from app.persistence.EnderecoDao import getEnderecoDao4
 from app.persistence.SemafaroDao import postSemafaro
+import time
 
 
 def lerTxt(nome_ficheiro):
@@ -10,7 +11,7 @@ def lerTxt(nome_ficheiro):
     ficheiro.close()
     return lista
 
-'''
+
 def inserirSemaforos(nomeDoTxt='semaforos.txt'):
     lista = lerTxt(nomeDoTxt)
     cont = 0
@@ -27,15 +28,22 @@ def inserirSemaforos(nomeDoTxt='semaforos.txt'):
             sinalizadorciclista = i[6]
             latitude = i[7]
             longitude = i[8]
-            codEndereco = getEnderecoDao2(localizacao1, latitude, longitude, localizacao2)
+            codEndereco = getEnderecoDao4(localizacao1, latitude, longitude, localizacao2)
             if codEndereco:
                 for i in codEndereco:
-                    objSemaforo = semaforo(None, codSemaforo, funcionamento, sinalsonoro, sinalizadorciclista,
+                    print(i)
+                    objSemaforo = semaforo(codSemaforo, funcionamento, sinalsonoro, sinalizadorciclista,
                                            utilizacao, i.codlocal)
                     postSemafaro(objSemaforo)
                     cont += 1
-        # print(cont)
+                    print(cont)
+    print('*')
+    print('**')
+    print('***')
+    print('****')
+    time.sleep(9999)
+    print(("Fim do time."))
+    time.sleep(9999)
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
 #print(inserirSemaforos())
-'''

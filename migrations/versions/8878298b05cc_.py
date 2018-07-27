@@ -114,7 +114,6 @@ def upgrade():
                     sa.Column('agente_equipamento', sa.String(length=45), nullable=True),
                     sa.Column('infracao_codinfracao', sa.Integer(), nullable=True),
                     sa.Column('descricaoinfracao', sa.String(length=300), nullable=True),
-                    sa.Column('amparolegal', sa.String(length=45), nullable=True),
                     sa.Column('endereco_codlocal', sa.Integer(), nullable=True),
                     sa.ForeignKeyConstraint(['endereco_codlocal'], ['endereco.codlocal'], ),
                     sa.PrimaryKeyConstraint('codregistro')

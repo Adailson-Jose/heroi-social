@@ -1,5 +1,7 @@
-from app.persistence.EnderecoDao import getEnderecoID, getEnderecoLocal
-from app.persistence.AcidenteDao import getAcidentesFiltro, getAcidentes, getAcidentesFiltro2
+from app.models.AcidenteObjeto import acidente
+from app.persistence.EnderecoDao import getEnderecoID, getEnderecoLocal, getEnderecoDao3
+from app.persistence.AcidenteDao import getAcidentesFiltro, getAcidentes, getAcidentesFiltro2, postAcidente
+import time
 
 def lerTxt(nome_ficheiro):
     ficheiro = open(nome_ficheiro, encoding="utf8")
@@ -155,7 +157,7 @@ def getMesesAcidentes():
       return dic_meses.keys(), dic_meses.values()
     return None, None
 
-'''
+
 def inseriAcidentes(nomeDoTxt='tabela acidente com  vítimas(2014-2016).txt'):
     lista = lerTxt(nomeDoTxt)
     cont = 0
@@ -174,23 +176,23 @@ def inseriAcidentes(nomeDoTxt='tabela acidente com  vítimas(2014-2016).txt'):
             tipo = i[8]
             latitude = i[9]
             longitude = i[10]
-            codEndereco = getEnderecoDao(endereco, latitude, longitude)
+            codEndereco = getEnderecoDao3(endereco, latitude, longitude)
             if codEndereco:
                 for i in codEndereco:
                     objAcidente = acidente(None, data_abertura, hora_abertura, tipo_ocorrencia,
                                            quantidade_vitimas, descricao, i.codlocal, tipo)
                     postAcidente(objAcidente)
                     cont += 1
+                    print(cont)
     print(("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont))))
     print('*')
     print('**')
     print('***')
     print('****')
-    time.sleep(999999999)
+    time.sleep(999)
     print(("Fim do time."))
-    time.sleep(9999999999)
+    time.sleep(999)
 
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
 
 #print(inseriAcidentes())
-'''

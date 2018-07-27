@@ -1,5 +1,5 @@
 from app.models.RegistroInfracaoObjeto import registro_infracao
-from app.persistence.EnderecoDao import getEnderecoDao
+from app.persistence.EnderecoDao import getEnderecoDao2
 from app.persistence.RegistroInfracaoDao import getRegistroInfracaoData, postRegistroInfracao
 import time
 
@@ -19,7 +19,6 @@ def getTodosRegistrosDeInfracoes(data):
 
     return datas
 
-'''
 def inserirRegistroInfracao(nomeDoTxt='registro de infraçoes 2017(1-3).txt'):
     lista = lerTxt(nomeDoTxt)
     cont = 0
@@ -33,15 +32,13 @@ def inserirRegistroInfracao(nomeDoTxt='registro de infraçoes 2017(1-3).txt'):
             agente_equipamento = i[3]
             infracao_codinfracao = i[4]
             descricaoinfracao = i[5]
-            amparolegal = i[6]
             localcometimento = i[7]
             bairro = i[8]
-            codEndereco = getEnderecoDao3(localcometimento,bairro)
-            print(codEndereco.codlocal)
+            codEndereco = getEnderecoDao2(localcometimento, bairro)
             if codEndereco != False:
                 objRegistroInfracao = registro_infracao(None, data_infracao, hora_infracao, data_implantacao,
                                                         agente_equipamento,
-                                                        infracao_codinfracao, descricaoinfracao, amparolegal,
+                                                        infracao_codinfracao, descricaoinfracao,
                                                         codEndereco.codlocal)
                 postRegistroInfracao(objRegistroInfracao)
             cont += 1
@@ -52,10 +49,9 @@ def inserirRegistroInfracao(nomeDoTxt='registro de infraçoes 2017(1-3).txt'):
     print('**')
     print('***')
     print('****')
-    time.sleep(999999999)
+    time.sleep(999)
     print(("Fim do time."))
-    time.sleep(9999999999)
+    time.sleep(999)
 
     return ("Fim da inserção.%s dados foram inseridos com sucesso." % (str(cont)))
-print(inserirRegistroInfracao())
-'''
+# print(inserirRegistroInfracao())
