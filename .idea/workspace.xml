@@ -2,15 +2,106 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae271c13-575d-4c03-9466-dbf3b83c6ab1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-heroi-socail-final.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/heroi-social.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/heroi-social.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mining_Traffic_Recife.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/Base.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/Base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/Boleto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/Boleto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/Cadastro.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/Cadastro.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/Contato.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/Contato.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/GerenteDeCorrelacoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/GerenteDeCorrelacoes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/GraficosAcidentes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/GraficosAcidentes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/Login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/LouderUser.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/LouderUser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/MapaAcidentes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/MapaAcidentes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/MapaAcidentesFiltro.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/MapaAcidentesFiltro.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/MapaEquipamentos.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/MapaEquipamentos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/MapaPontoAcidentes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/MapaPontoAcidentes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/MapaSemaforos.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/MapaSemaforos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/Pagamento.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/Pagamento.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/RelatorioAcidentes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/RelatorioAcidentes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/Sair.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/Sair.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/TelaPrincipal.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/TelaPrincipal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/CadastroForms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/CadastroForms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ContatoForms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ContatoForms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ControleAcidentesCSV.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControleAcidentesCSV.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ControleEnderecoEntidade.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControleEnderecoEntidade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ControleEquipamentosCSV.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControleEquipamentosCSV.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ControleGraficoAcidente.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControleGraficoAcidente.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ControleGrafioAcidente.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControleGrafioAcidente.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ControleMPS.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControleMPS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/ControleRegistroInfracaoCSV.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControleRegistroInfracaoCSV.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ControleRelatorioAcidentes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControleRelatorioAcidentes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ControleSemaforos.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControleSemaforos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ControleSemaforosCSV.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControleSemaforosCSV.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/LoginForms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/LoginForms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/PagamentoForms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/PagamentoForms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/PesquisaForms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/PesquisaForms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/UserControllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserControllers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/endereco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/endereco.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/equipamentos-de-monitoramento-e-ficalizacao.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/equipamentos-de-monitoramento-e-ficalizacao.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/registro de infraçoes 2017(1-3).txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/registro de infraçoes 2017(1-3).txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/semaforos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/semaforos.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/tabela acidente com  vítimas(2014-2016).txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/tabela acidente com  vítimas(2014-2016).txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/AcidenteObjeto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/AcidenteObjeto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/AssinaturaObjeto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/AssinaturaObjeto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/EnderecoObjeto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/EnderecoObjeto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/EnderecoObjetoEntidade.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/EnderecoObjetoEntidade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/EntidadeObjeto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/EntidadeObjeto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/EnumTipoEntidade.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/EnumTipoEntidade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/EquipamentoFiscalizacaoObjeto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/EquipamentoFiscalizacaoObjeto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/PacoteInformacaObjeto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/PacoteInformacaObjeto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/RegistroInfracaoObjeto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/RegistroInfracaoObjeto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/SemaforoObjeto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/SemaforoObjeto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/SugestaoObjeto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/SugestaoObjeto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/UsuarioObjeto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/UsuarioObjeto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/persistence/AcidenteDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistence/AcidenteDao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/persistence/EnderecoDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistence/EnderecoDao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/persistence/EnderecoEntidadeDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistence/EnderecoEntidadeDao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/persistence/EquipamentoDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistence/EquipamentoDao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/persistence/RegistroInfracaoDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistence/RegistroInfracaoDao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/persistence/SemafaroDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistence/SemafaroDao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/persistence/UserDao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistence/UserDao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/style5.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/style5.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/boleto.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/boleto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/cadastro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/contato.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/contato.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/correalacoes.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/correalacoes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/graficos_acidentes.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/graficos_acidentes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/mapa_calor_acidente.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/mapa_calor_acidente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/mapa_ponto_acidente.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/mapa_ponto_acidente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/mapa_ponto_equipamentos.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/mapa_ponto_equipamentos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/mapa_ponto_semaforos.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/mapa_ponto_semaforos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/pagamento.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/pagamento.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/relatorio_acidentes.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/relatorio_acidentes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/tela_principal.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/tela_principal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/alembic.ini" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/alembic.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/script.py.mako" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/8878298b05cc_.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/versions/8878298b05cc_.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/activate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate.bat" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/activate.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/activate.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate_this.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/activate_this.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/deactivate.bat" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/deactivate.bat" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,11 +111,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="ControleRegistroInfracaoCSV.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/ControleRegistroInfracaoCSV.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="565">
               <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
@@ -36,8 +127,8 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+            <state relative-caret-position="391">
+              <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -88,18 +179,6 @@
               <item name="heroi-social" type="b2602c69:ProjectViewProjectNode" />
               <item name="heroi-social" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="heroi-social" type="b2602c69:ProjectViewProjectNode" />
-              <item name="heroi-social" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="heroi-social" type="b2602c69:ProjectViewProjectNode" />
-              <item name="heroi-social" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="heroi-social" type="b2602c69:ProjectViewProjectNode" />
@@ -228,34 +307,37 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3292517" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.3292517" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.46530613" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3292517" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.46530613" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.3292517" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3292517" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.8367347" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3292517" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3292517" />
     </layout-to-restore>
@@ -265,11 +347,29 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="mudanças gerais" />
-    <option name="LAST_COMMIT_MESSAGE" value="mudanças gerais" />
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/controllers/ControleRegistroInfracaoCSV.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/sqlalchemy/ext/declarative/clsregistry.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
@@ -367,8 +467,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        <state relative-caret-position="391">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -381,7 +481,126 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ControleRegistroInfracaoCSV.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/sqlalchemy/ext/declarative/clsregistry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="280" selection-start-line="280" selection-end-line="280" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/versions/8878298b05cc_.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/cadastro.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-765" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/RegistroInfracaoObjeto.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ControleGraficoAcidente.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-496" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/RelatorioAcidentes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/GerenteDeCorrelacoes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ControleSemaforosCSV.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ControleEquipamentosCSV.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ControleAcidentesCSV.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="194" column="1" selection-start-line="194" selection-start-column="1" selection-end-line="194" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/persistence/AcidenteDao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="21" column="95" lean-forward="true" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/persistence/EnderecoDao.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
+          <caret line="30" column="74" selection-start-line="30" selection-start-column="74" selection-end-line="30" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/persistence/RegistroInfracaoDao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/mapa_calor_acidente.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ControleRegistroInfracaoCSV.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
           <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
